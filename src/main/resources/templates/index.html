@@ -81,6 +81,15 @@
     <a href="/clients">Clients</a>&nbsp&nbsp&nbsp&nbsp
     <a href="/borrowed_books">BorrowedBooks</a>
 
+    <div class="container" th:align="right">
+        <form th:action="@{/logout}" method="get">
+            <button class="btn btn-md btn-danger btn-block" name="registration"
+                    type="Submit">Logout
+            </button>
+        </form>
+    </div>
+
+
 </head>
 <body>
 
@@ -98,7 +107,9 @@
         <div class="column">
             <div class="card">
                 <h3><span th:text="${listBooks.get(0).bookName}"/></h3>
-                <img src="../static/p/images/shogun1.jpeg" th:src="@{/images/shogun1.jpeg}" style="width:250px;height:350px;" />
+<!--                <img  th:src="@{'listBooks:bookImage/jpeg;base64,'+${bookImage.encodedString}}" />-->
+<!--                <img src="../static/p/images/shogun1.jpeg" th:src="@{/images/shogun1.jpeg}" style="width:250px;height:350px;" />-->
+<!--                <img th:src="@{listBooks.get(0).bookImage}" style="width:250px;height:350px;" />-->
                 <p><span th:text="${listBooks.get(0).authors.getFirstName()+' '+listBooks.get(0).authors.getLastName()}"/></p>
                 <p><span th:text="${listBooks.get(0).publishers.getPublisherName()}"/></p>
                 <p><button><a href="/borrowed_books">Book Card</a></button></p>

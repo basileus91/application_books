@@ -41,5 +41,8 @@ databaseChangeLog:
                   type: int(4)
                   constraints:
                     nullable: false
+              - column:
+                  name: book_image
+                  type: BINARY
             schemaName: public
             tableName: books

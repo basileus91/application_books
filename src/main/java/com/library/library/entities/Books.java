@@ -29,7 +29,6 @@ public class Books {
     private boolean isBorrowed;
 
     @Column(name="book_image")
-    @Lob
     private byte[] bookImage;
 
     @ManyToOne(cascade = CascadeType.ALL)
