@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>BorrowedBook Manager</title>
+    <a href="/home">Go Home</a>&nbsp&nbsp&nbsp&nbsp
+</head>
+<body>
+<div align="center">
+    <h1>Book Online Library</h1>
+
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>BookID</th>
+            <th>Client</th>
+            <th>BookName</th>
+            <th>BorrowedDate</th>
+            <th>ReturnedDate</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="borrowed_books : ${listBorrowedBooks}">
+            <td th:text="${borrowed_books.id}">BookID</td>
+            <td th:text="${borrowed_books.clients.getFirstName()+' '+borrowed_books.clients.getLastName()}">Client</td>
+            <td th:text="${borrowed_books.getBooks().bookName}">BookName</td>
+            <td th:text="${borrowed_books.borrowedDate}">BorrowedDate</td>
+            <td th:text="${borrowed_books.returnedDate}">ReturnedDate</td>
+
+            <td>
+                <a th:href="@{'/borrowed_books/edit/' + ${borrowed_books.id}}">Edit</a>
+<!--                &nbsp;&nbsp;&nbsp;-->
+<!--                <a th:href="@{'borrowed_books/delete/' + ${books.id}}">Delete</a>-->
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+
+</body>
+<footer>
+    <div align="center" th:insert="~{footer::copy}">&copy; 2019 The Static Templates</div>
+</footer>
+</html>

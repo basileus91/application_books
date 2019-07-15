@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_borrowed_books
+      author: vasile
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: borrowed_date
+                  type: Date
+              - column:
+                  name: returned_date
+                  type: Date
+              - column:
+                  name: book_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: client_id
+                  type: int(4)
+                  constraints:
+                    nullable: false
+            schemaName: public
+            tableName: borrowed_books

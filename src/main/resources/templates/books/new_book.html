@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create New Book</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Create New Book</h1>
+		<br />
+		<form action="/books" th:action="@{/books/save}" th:object="${books}"
+			method="post">
+
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>Book Name:</td>
+					<td><input type="text" th:field="*{bookName}" /></td>
+				</tr>
+				<tr>
+					<td>Publish Date:</td>
+					<td><input type="date" th:field="*{publishDate}" /></td>
+				</tr>
+				</tr>-->
+<!--				<tr>-->
+<!--					<td>Author Name:</td>-->
+<!--					<td><input type="text" th:field="*{authors}" /></td>-->
+<!--				</tr>-->
+				<tr>
+					<td>Author FirstName:</td>
+					<td><input type="text" th:field="*{authors.firstName}" /></td>
+				</tr>
+				<tr>
+					<td>Author LastName:</td>
+					<td><input type="text" th:field="*{authors.lastName}" /></td>
+				</tr>
+				<tr>
+					<td>Number of Exemplars:</td>
+					<td><input type="text" th:field="*{exemplarNumber}" /></td>
+				</tr>
+<!--				<tr>-->
+<!--					<td>Publisher Name :</td>-->
+<!--					<td><input type="text" th:field="*{publishers}" /></td>-->
+<!--				</tr>-->
+				<tr>
+					<td>Publisher Name :</td>
+					<td><input type="text" th:field="*{publishers.publisherName}" /></td>
+				</tr>								
+				<tr>
+					<td colspan="2"><button type="submit">Save</button> </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

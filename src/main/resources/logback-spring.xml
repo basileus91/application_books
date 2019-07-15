@@ -1,0 +1,21 @@
+<configuration>
+<!-- Setting the file name, with LOG_PATH in edit configurations. Path ->  Desktop       -->
+<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>${LOG_PATH}/books.log</file>
+
+    <encoder>
+        <pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
+    </encoder>
+</appender>
+<!-- Pattern for naming the console output    -->
+<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+        <pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
+    </encoder>
+</appender>
+
+<root level="info">
+    <appender-ref ref="FILE" />
+    <appender-ref ref="STDOUT" />
+</root>
+</configuration>

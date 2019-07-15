@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: addForeignKeyConstraintOnBooks
+      author: vasile
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: book_id
+            baseTableName: borrowed_books
+            constraintName: fk_book_id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+            referencedColumnNames: id
+            referencedTableName: books

@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_authors
+      author: vasile
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nationality
+                  type: varchar(50)
+            schemaName: public
+            tableName: authors

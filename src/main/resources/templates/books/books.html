@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<style>
+
+    .dropbtn {
+        background-color: black;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: lightgrey;
+        min-width: 200px;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {background-color: white;}
+    .dropdown:hover .dropdown-content {display: block;}
+    .dropdown:hover .dropbtn {background-color: grey;}
+
+</style>
+
+
+
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Book Manager</title>
+    <a href="/home">Go Home</a>&nbsp&nbsp&nbsp&nbsp
+    <a href="/books/new">Add Book</a>
+</head>
+<body>
+<!--<div align="center">-->
+<!--    <img src="/../logo.jpg"-->
+<!--         th:attr="src=@{/../p/logo.jpg}" />-->
+<!--</div>-->
+<div align="center">
+    <h1>Book Online Library</h1>
+
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>BookID</th>
+            <th>Name</th>
+            <th>Publish Date</th>
+            <th>IsEdited</th>
+            <th>IsBorrowed</th>
+            <th>AuthorName</th>
+            <th>PublisherName</th>
+            <th>NumberOfExemplar</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="books : ${listBooks}">
+            <td th:text="${books.id}">Product ID</td>
+            <td th:text="${books.bookName}">Name</td>
+            <td th:text="${books.publishDate}">Publish Date</td>
+            <td><input type="checkbox" name="active" th:checked="${books.isEdited()}"> </td>
+            <td><input type="checkbox" name="active" th:checked="${books.isBorrowed()}"> </td>
+            <td th:text="${books.authors.getFirstName()+' '+books.authors.getLastName()}">Author Name</td>
+            <td th:text="${books.publishers.getPublisherName()}">Publisher Name</td>
+            <td th:text="${books.exemplarNumber}">Number of Exemplar</td>
+
+            <td>
+                <a th:href="@{'/books/edit/' + ${books.id}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{'books/delete/' + ${books.id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+    <select th:field="*{listBooks}">
+    <option value="">Select Book</option>
+    <option th:each="books : ${listBooks}" th:value="${books.bookName}" th:text="${books.bookName}"></option>
+    </select>
+</div>
+<br/>
+
+</body>
+<footer>
+    <div align="center" th:insert="~{footer::copy}">&copy; 2019 The Static Templates</div>
+</footer>
+</html>

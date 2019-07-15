@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active:
+      - prod
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+  application:
+    name: Library
+
+  queries:
+    users-query: SELECT email,"password",active from "user" where email=?
+    roles-query: select u.email, r.role from "user" u left outer join user_role ur on(u.user_id=ur.user_id) left outer join role r on(ur.role_id=r.role_id) where u.email=?

@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_publishers
+      author: vasile
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: publisher_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address
+                  type: varchar(50)
+            schemaName: public
+            tableName: publishers

@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_books
+      author: vasile
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role_id
+                  type: int
+                  constraints:
+                    nullable: false
+            schemaName: public
+            tableName: user_role

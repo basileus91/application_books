@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Borrow Book</title>
+</head>
+<body>
+<div align="center">
+    <h1>Borrow Book</h1>
+    <br />
+    <form action="/borrowed_books" th:action="@{/borrowed_books/save}" th:object="${borrowed_books}"
+          method="post">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>BookID:</td>
+                <td>
+                    <input type="text" th:field="*{id}" readonly="readonly" />
+                </td>
+            </tr>
+            <tr>
+                <td>ClientName:</td>
+                <td>
+                    <input type="text" th:field="*{clients}" />
+                </td>
+            </tr>
+            </tr>
+            <tr>
+                <td>BookName:</td>
+                <td>
+                    <input type="text" th:field="*{books}" />
+                </td>
+            </tr>
+            <tr>
+                <td>BorrowDate:</td>
+                <td>
+                    <input type="date" th:field="*{borrowedDate}" />
+                </td>
+            </tr>
+            <tr>
+                <td>ReturnDate:</td>
+                <td>
+                    <input type="date" th:field="*{returnedDate}" />
+                </td>
+            </tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

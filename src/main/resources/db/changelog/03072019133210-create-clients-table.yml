@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_clients
+      author: vasile
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: first_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: birth_date
+                  type: Date
+              - column:
+                  name: email
+                  type: varchar(50)
+              - column:
+                  name: phone_number
+                  type: varchar(50)
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+            schemaName: public
+            tableName: clients

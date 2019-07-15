@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_books
+      author: vasile
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: book_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: publish_date
+                  type: Date
+              - column:
+                  name: is_edited
+                  type: boolean
+              - column:
+                  name: is_borrowed
+                  type: boolean
+              - column:
+                  name: author_id
+                  type: int(4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: publisher_id
+                  type: int(4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: exemplar_numbers
+                  type: int(4)
+                  constraints:
+                    nullable: false
+            schemaName: public
+            tableName: books

@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: addForeignKeyConstraintOnPublishers
+      author: vasile
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: publisher_id
+            baseTableName: books
+            constraintName: fk_publisher_id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+            referencedColumnNames: id
+            referencedTableName: publishers

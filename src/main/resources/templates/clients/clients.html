@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Client Manager</title>
+    <a href="/home">Go Home</a>&nbsp&nbsp&nbsp&nbsp
+    <a href="/clients/new">Add Client</a>
+</head>
+<body>
+<div align="center">
+    <h1>Clients List</h1>
+
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>ClientID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>BirthDate</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each=" clients : ${listClients}">
+            <td th:text="${clients.id}">Author ID</td>
+            <td th:text="${clients.firstName}">FirstName</td>
+            <td th:text="${clients.lastName}">LastName</td>
+            <td th:date="${clients.birthDate}">LastName</td>
+            <td th:text="${clients.email}">FirstName</td>
+            <td th:text="${clients.phoneNumber}">LastName</td>
+            <td>
+                <a th:href="@{'/clients/edit/' + ${clients.id}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{'clients/delete/' + ${clients.id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+
+</body>
+<footer>
+    <div align="center" th:insert="~{footer::copy}">&copy; 2019 The Static Templates</div>
+</footer>
+</html>
