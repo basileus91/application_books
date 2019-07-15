@@ -3,6 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/buttons.css}"/>
 
     <style>
         * {
@@ -57,15 +58,16 @@
         }
 
         .card button {
-            border: none;
-            outline: 0;
-            padding: 12px;
-            color: white;
-            background-color: #FFFFE0;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 8px;
             text-align: center;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
+            background-color: #FFFFE0;
+            transition: 0.3s;
+            border: #004080;
+            font-size: medium;
+            size: 15px;
+            border-radius: 12px;
+            text-decoration: none;
         }
 
         .card button:hover {
@@ -75,11 +77,12 @@
     </style>
 
 <title>Book Manager</title>
-    <a href="/books">Books</a>&nbsp&nbsp&nbsp&nbsp
-    <a href="/publishers">Publishers</a>&nbsp&nbsp&nbsp&nbsp
-    <a href="/authors">Authors</a>&nbsp&nbsp&nbsp&nbsp
-    <a href="/clients">Clients</a>&nbsp&nbsp&nbsp&nbsp
-    <a href="/borrowed_books">BorrowedBooks</a>
+    <br/>
+    <a href="/books" class="buttons">Books</a>&nbsp&nbsp&nbsp&nbsp
+    <a href="/publishers" class="buttons">Publishers</a>&nbsp&nbsp&nbsp&nbsp
+    <a href="/authors" class="buttons">Authors</a>&nbsp&nbsp&nbsp&nbsp
+    <a href="/clients" class="buttons">Clients</a>&nbsp&nbsp&nbsp&nbsp
+    <a href="/borrowed_books" class="buttons">BorrowedBooks</a>
 
     <div class="container" th:align="right">
         <form th:action="@{/logout}" method="get">
@@ -110,6 +113,7 @@
 <!--                <img  th:src="@{'listBooks:bookImage/jpeg;base64,'+${bookImage.encodedString}}" />-->
 <!--                <img src="../static/p/images/shogun1.jpeg" th:src="@{/images/shogun1.jpeg}" style="width:250px;height:350px;" />-->
 <!--                <img th:src="@{listBooks.get(0).bookImage}" style="width:250px;height:350px;" />-->
+                <img th:src="*{'listBooks:bookImage/png;base64,'+listBooks.get(0).bookImage}" alt=""/>
                 <p><span th:text="${listBooks.get(0).authors.getFirstName()+' '+listBooks.get(0).authors.getLastName()}"/></p>
                 <p><span th:text="${listBooks.get(0).publishers.getPublisherName()}"/></p>
                 <p><button><a href="/borrowed_books">Book Card</a></button></p>
