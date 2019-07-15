@@ -10,7 +10,7 @@
 
     <title>Book Manager</title>
 
-    <a href="/logout" class="logout-button">Logout</a>
+<!--    <a href="/logout" class="logout-button">Logout</a>-->
 
 
 </head>
@@ -19,7 +19,7 @@
 <br/>
 <br/>
 <div align="center">
-    <img src="../static/p/images/book_logo.png" th:src="@{/images/book_logo_good.png}"
+    <img src="../static/images/book_logo.png" th:src="@{/images/book_logo_good.png}"
          style="width:100px;height:100px;" />
 </div>
 
@@ -29,6 +29,7 @@
 <div >
     <div class="row" >
         <div class="column" th:each="books : ${listBooks}">
+            <br/>
             <div class="card" >
                 <h3><span th:text="${books.bookName}"/></h3>
                 <img th:src="*{'listBooks:bookImage/png;base64,'+books.bookImage}" alt=""/>

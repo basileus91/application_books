@@ -49,10 +49,6 @@
     <a href="/home/books/new" class="buttons">Add Book</a>
 </head>
 <body>
-<!--<div align="center">-->
-<!--    <img src="/../logo.jpg"-->
-<!--         th:attr="src=@{/../p/logo.jpg}" />-->
-<!--</div>-->
 <div align="center">
     <h1>Book Online Library</h1>
 
@@ -69,6 +65,7 @@
             <th>PublisherName</th>
             <th>NumberOfExemplar</th>
             <th>Actions</th>
+            <th>Test</th>
         </tr>
         </thead>
         <tbody>
@@ -87,17 +84,17 @@
                 &nbsp;&nbsp;&nbsp;
                 <a th:href="@{'/home/books/delete/' + ${books.id}}">Delete</a>
             </td>
+            <td>
+                <div>
+                <select th:field="*{listBooks}">
+                    <option value="">Select Book</option>
+                    <option th:each="books : ${listBooks}" th:value="${books.bookName}" th:text="${books.bookName}"></option>
+                </select>
+                </div>
+            </td>
         </tr>
         </tbody>
     </table>
-
-
-<!--</div>-->
-<!--    <select th:field="*{listBooks}">-->
-<!--    <option value="">Select Book</option>-->
-<!--    <option th:each="books : ${listBooks}" th:value="${books.bookName}" th:text="${books.bookName}"></option>-->
-<!--    </select>-->
-<!--</div>-->
 <br/>
 </div>
 </body>
