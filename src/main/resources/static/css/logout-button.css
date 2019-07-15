@@ -1,0 +1,24 @@
+.logout-button {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    text-align: center;
+    background-color: #F08080;
+    transition: 0.3s;
+    border: #004080;
+    font-size: medium;
+    size: 15px;
+    position: absolute;
+    right: 12px;
+}
+
+.logout-button :hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+
+a:link {
+    color: Black;
+    text-decoration: none;
+}
+a:visited {
+    color: gray;
+}

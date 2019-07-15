@@ -37,7 +37,7 @@ public class BorrowedBooksController {
     public String saveBorrowedBooks(@ModelAttribute("borrowed_books") BorrowedBooks borrowed_books) {
         service.save(borrowed_books);
 
-        return "redirect:/borrowed_books";
+        return "redirect:/home/borrowed_books";
     }
 
     @RequestMapping("/edit/{id}")
@@ -52,6 +52,6 @@ public class BorrowedBooksController {
     @RequestMapping("/delete/{id}")
     public String deleteBorrowedBooks(@PathVariable(name = "id") int id) {
         service.delete(id);
-        return "redirect:/borrowed_books";
+        return "redirect:/home/borrowed_books";
     }
 }

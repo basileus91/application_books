@@ -6,7 +6,7 @@
     <title>Publisher Manager</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/buttons.css}"/>
     <a href="/home" class="buttons">Go Home</a>&nbsp&nbsp&nbsp&nbsp
-    <a href="/publishers/new" class="buttons">Add Publisher</a>
+    <a href="/home/publishers/new" class="buttons">Add Publisher</a>
 </head>
 <body>
 <div align="center">
@@ -28,9 +28,9 @@
             <td th:text="${publishers.publisherName}">Publisher Name</td>
             <td th:text="${publishers.address}">Publisher Address</td>
             <td>
-                <a th:href="@{'/publishers/edit/' + ${publishers.id}}">Edit</a>
+                <a th:href="@{'/home/publishers/edit/' + ${publishers.id}}">Edit</a>
                 &nbsp;&nbsp;&nbsp;
-                <a th:href="@{'publishers/delete/' + ${publishers.id}}">Delete</a>
+                <a th:href="@{'/home/publishers/delete/' + ${publishers.id}}">Delete</a>
             </td>
         </tr>
         </tbody>

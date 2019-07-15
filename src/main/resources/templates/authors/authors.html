@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/buttons.css}"/>
     <title>Authors Manager</title>
     <a href="/home" class="buttons">Go Home</a>&nbsp&nbsp&nbsp&nbsp
-    <a href="/authors/new" class="buttons">Add Author</a>
+    <a href="/home/authors/new" class="buttons">Add Author</a>
 </head>
 <body>
 <div align="center">
@@ -30,7 +30,7 @@
             <td th:text="${authors.lastName}">LastName</td>
             <td th:text="${authors.nationality}">LastName</td>
             <td>
-                <a th:href="@{'/authors/edit/' + ${authors.id}}">Edit</a>
+                <a th:href="@{'/home/authors/edit/' + ${authors.id}}">Edit</a>
                 &nbsp;&nbsp;&nbsp;
                 <a th:href="@{'authors/delete/' + ${authors.id}}">Delete</a>
             </td>

@@ -4,84 +4,20 @@
 <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/buttons.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/card.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/card.css}"/>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        /* Float four columns side by side */
-        .column {
-            float: left;
-            width: 25%;
-            padding: 0 10px;
-        }
-
-        /* Remove extra left and right margins, due to padding */
-        .row {margin: 0 -5px;}
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        /* Responsive columns */
-        @media screen and (max-width: 600px) {
-            .column {
-                width: 100%;
-                display: block;
-                margin-bottom: 20px;
-            }
-        }
-
-        /* Style the counter cards */
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            padding: 16px;
-            text-align: center;
-            background-color: #f1f1f1;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-        }
-
-        img {
-            border-radius: 5px 5px 0 0;
-        }
-
-        .card button {
-            border: none;
-            outline: 0;
-            padding: 12px;
-            color: white;
-            background-color: #FFFFE0;
-            text-align: center;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
-            text-decoration: none;
-        }
-
-        .card button:hover {
-            opacity: 0.7;
-        }
-
-    </style>
 
     <title>Book Manager</title>
+
+    <a href="/logout" class="logout-button">Logout</a>
 
 
 </head>
 <body>
-
+<br/>
+<br/>
+<br/>
 <div align="center">
     <img src="../static/p/images/book_logo.png" th:src="@{/images/book_logo_good.png}"
          style="width:100px;height:100px;" />
@@ -90,54 +26,19 @@
 <h1 align="center">Book Online Library</h1>
 <br/>
 
-
 <div >
-    <div class="row">
-        <div class="column">
-            <div class="card">
-                <h3><span th:text="${listBooks.get(0).bookName}"/></h3>
-                <img src="../static/p/images/shogun1.jpeg" th:src="@{/images/shogun1.jpeg}" style="width:250px;height:350px;" />
-                <p><span th:text="${listBooks.get(0).authors.getFirstName()+' '+listBooks.get(0).authors.getLastName()}"/></p>
-                <p><span th:text="${listBooks.get(0).publishers.getPublisherName()}"/></p>
-                <p><button><a href="/reserveBook">Book Card</a></button></p>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <h3><span th:text="${listBooks.get(1).bookName}"/></h3>
-                <img src="../static/p/images/shogun2.jpeg" th:src="@{/images/shogun2.jpeg}" style="width:250px;height:350px;" />
-
-                <p><span th:text="${listBooks.get(1).authors.getFirstName()+' '+listBooks.get(1).authors.getLastName()}"/></p>
-                <p><span th:text="${listBooks.get(1).publishers.getPublisherName()}"/></p>
-                <p><button ><a href="/reserveBook">Book Card</a></button></p>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <h3><span th:text="${listBooks.get(2).bookName}"/></h3>
-                <img src="../static/p/images/shogun3.jpg" th:src="@{/images/shogun3.jpg}" style="width:250px;height:350px;" />
-                <p><span th:text="${listBooks.get(2).authors.getFirstName()+' '+listBooks.get(2).authors.getLastName()}"/></p>
-                <p><span th:text="${listBooks.get(2).publishers.getPublisherName()}"/></p>
-                <p><button><a href="/reserveBook">Book Card</a></button></p>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <h3><span th:text="${listBooks.get(3).bookName}"/></h3>
-                <img src="../static/p/images/padurea.jpg" th:src="@{/images/padurea.jpg}" style="width:250px;height:350px;" />
-                <p><span th:text="${listBooks.get(3).authors.getFirstName()+' '+listBooks.get(3).authors.getLastName()}"/></p>
-                <p><span th:text="${listBooks.get(3).publishers.getPublisherName()}"/></p>
-                <p><button><a href="/reserveBook">Book Card</a></button></p>
+    <div class="row" >
+        <div class="column" th:each="books : ${listBooks}">
+            <div class="card" >
+                <h3><span th:text="${books.bookName}"/></h3>
+                <img th:src="*{'listBooks:bookImage/png;base64,'+books.bookImage}" alt=""/>
+                <p><span th:text="${books.authors.getFirstName()+' '+books.authors.getLastName()}"/></p>
+                <p><span th:text="${books.publishers.getPublisherName()}"/></p>
+                <p><button><a href="/borrowed_books">Book Card</a></button></p>
             </div>
         </div>
     </div>
-
 </div>
-
-
 
 <br/><br/>
 </body>

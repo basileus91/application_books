@@ -46,7 +46,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/buttons.css}"/>
     <title>Book Manager</title>
     <a href="/home" class="buttons">Go Home</a>&nbsp&nbsp&nbsp&nbsp
-    <a href="/books/new" class="buttons">Add Book</a>
+    <a href="/home/books/new" class="buttons">Add Book</a>
 </head>
 <body>
 <!--<div align="center">-->
@@ -83,23 +83,23 @@
             <td th:text="${books.exemplarNumber}">Number of Exemplar</td>
 
             <td>
-                <a th:href="@{'/books/edit/' + ${books.id}}">Edit</a>
+                <a th:href="@{'/home/books/edit/' + ${books.id}}">Edit</a>
                 &nbsp;&nbsp;&nbsp;
-                <a th:href="@{'books/delete/' + ${books.id}}">Delete</a>
+                <a th:href="@{'/home/books/delete/' + ${books.id}}">Delete</a>
             </td>
         </tr>
         </tbody>
     </table>
 
 
-</div>
-    <select th:field="*{listBooks}">
-    <option value="">Select Book</option>
-    <option th:each="books : ${listBooks}" th:value="${books.bookName}" th:text="${books.bookName}"></option>
-    </select>
-</div>
+<!--</div>-->
+<!--    <select th:field="*{listBooks}">-->
+<!--    <option value="">Select Book</option>-->
+<!--    <option th:each="books : ${listBooks}" th:value="${books.bookName}" th:text="${books.bookName}"></option>-->
+<!--    </select>-->
+<!--</div>-->
 <br/>
-
+</div>
 </body>
 <footer>
     <div align="center" th:insert="~{footer::copy}">&copy; 2019 The Static Templates</div>

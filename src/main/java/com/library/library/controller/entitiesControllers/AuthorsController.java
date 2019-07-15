@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/authors")
+@RequestMapping("/home/authors")
 public class AuthorsController {
 
     @Autowired
@@ -38,7 +38,7 @@ public class AuthorsController {
     public String saveAuthors(@ModelAttribute("authors") Authors authors) {
         service.save(authors);
 
-        return "redirect:/authors";
+        return "redirect:/home/authors";
     }
 
     @RequestMapping("/edit/{id}")
@@ -53,6 +53,6 @@ public class AuthorsController {
     @RequestMapping("/delete/{id}")
     public String deleteAuthors(@PathVariable(name = "id") int id) {
         service.delete(id);
-        return "redirect:/authors";
+        return "redirect:/home/authors";
     }
 }

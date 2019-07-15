@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/clients")
+@RequestMapping("/home/clients")
 public class ClientsController {
 
 
@@ -39,7 +39,7 @@ public class ClientsController {
     public String saveClients(@ModelAttribute("clients") Clients clients) {
         service.save(clients);
 
-        return "redirect:/clients";
+        return "redirect:/home/clients";
     }
 
     @RequestMapping("/edit/{id}")
@@ -54,6 +54,6 @@ public class ClientsController {
     @RequestMapping("/delete/{id}")
     public String deleteClients(@PathVariable(name = "id") int id) {
         service.delete(id);
-        return "redirect:/clients";
+        return "redirect:/home/clients";
     }
 }

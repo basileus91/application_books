@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/books")
+@RequestMapping("/home/books")
 public class BooksController {
 
     @Autowired
@@ -37,7 +37,7 @@ public class BooksController {
     public String saveBooks(@ModelAttribute("books") Books books) {
         service.save(books);
 
-        return "redirect:/books";
+        return "redirect:/home/books";
     }
 
     @RequestMapping("/edit/{id}")
@@ -53,7 +53,7 @@ public class BooksController {
     @RequestMapping("/delete/{id}")
     public String deleteBooks(@PathVariable(name = "id") int id) {
         service.delete(id);
-        return "redirect:/books";
+        return "redirect:/home/books";
     }
 
 //    private String uploadFile(MultipartFile file){
