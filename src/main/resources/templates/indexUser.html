@@ -5,14 +5,10 @@
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/buttons.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/card.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/card.css}"/>
-
+    <link rel="stylesheet" type="text/css" th:href="@{/css/logout-button.css}"/>
 
     <title>Book Manager</title>
-
-<!--    <a href="/logout" class="logout-button">Logout</a>-->
-
-
+    <a href="/logout" class="logout-button">Logout</a>
 </head>
 <body>
 <br/>
@@ -32,7 +28,7 @@
             <br/>
             <div class="card" >
                 <h3><span th:text="${books.bookName}"/></h3>
-                <img th:src="*{'listBooks:bookImage/png;base64,'+books.bookImage}" alt=""/>
+                <img th:src="@{'data:image/jpeg;base64,'+${books.bookImage}}" style="width:100px;height:100px;" alt=""/>
                 <p><span th:text="${books.authors.getFirstName()+' '+books.authors.getLastName()}"/></p>
                 <p><span th:text="${books.publishers.getPublisherName()}"/></p>
                 <p><button><a href="/borrowed_books">Book Card</a></button></p>

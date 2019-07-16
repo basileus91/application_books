@@ -9,8 +9,8 @@
 	<div align="center">
 		<h1>Create New Book</h1>
 		<br />
-		<form action="/home/books" th:action="@{/home/books/save}" th:object="${books}"
-			method="post">
+		<form enctype="multipart/form-data" th:action="@{/home/books/save}" th:object="${books} "
+			method="post" >
 
 			<table border="0" cellpadding="10">
 				<tr>
@@ -22,10 +22,7 @@
 					<td><input type="date" th:field="*{publishDate}" /></td>
 				</tr>
 				</tr>-->
-<!--				<tr>-->
-<!--					<td>Author Name:</td>-->
-<!--					<td><input type="text" th:field="*{authors}" /></td>-->
-<!--				</tr>-->
+			</tr>-->
 				<tr>
 					<td>Author FirstName:</td>
 					<td><input type="text" th:field="*{authors.firstName}" /></td>
@@ -38,17 +35,14 @@
 					<td>Number of Exemplars:</td>
 					<td><input type="text" th:field="*{exemplarNumber}" /></td>
 				</tr>
-<!--				<tr>-->
-<!--					<td>Publisher Name :</td>-->
-<!--					<td><input type="text" th:field="*{publishers}" /></td>-->
-<!--				</tr>-->
+				</tr>-->
 				<tr>
 					<td>Publisher Name :</td>
 					<td><input type="text" th:field="*{publishers.publisherName}" /></td>
 				</tr>
 				<tr>
 					<td>Upload Book Image :</td>
-					<td><input type="file" th:field="*{bookImage}" /></td>
+					<td><input type="file" th:name="cover"/></td>
 				</tr>
 <!--				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>-->
 <!--				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>-->

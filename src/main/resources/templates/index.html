@@ -35,7 +35,7 @@
                     <br/>
                     <div class="card" >
                         <h3><span th:text="${books.bookName}"/></h3>
-                        <img th:src="*{books.bookImage}" alt=""/>
+                        <img th:src="@{'data:image/jpeg;base64,'+${books.bookImage}}" style="width:100px;height:100px;" alt=""/>
                         <p><span th:text="${books.authors.getFirstName()+' '+books.authors.getLastName()}"/></p>
                         <p><span th:text="${books.publishers.getPublisherName()}"/></p>
                         <p><button><a href="/borrowed_books">Book Card</a></button></p>

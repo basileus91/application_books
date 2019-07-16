@@ -43,6 +43,6 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: book_image
-                  type: BINARY
+                  type: text
             schemaName: public
             tableName: books

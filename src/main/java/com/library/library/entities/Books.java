@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.sql.Blob;
 import java.sql.Date;
 
 @Getter
@@ -29,7 +30,7 @@ public class Books {
     private boolean isBorrowed;
 
     @Column(name="book_image")
-    private byte[] bookImage;
+    private String bookImage;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id", nullable = false)
