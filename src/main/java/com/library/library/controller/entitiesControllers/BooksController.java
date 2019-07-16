@@ -47,7 +47,7 @@ public class BooksController {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveBooks(@ModelAttribute("books") Books books, @RequestParam("cover") MultipartFile file) {
-        log.debug(file.getName());
+//        log.debug(file.getName());
         try {
             String imageString = Base64.encodeBase64String(file.getBytes());
             books.setBookImage(imageString);
