@@ -33,7 +33,7 @@ public class HomePageUserController {
         return "indexUser";
     }
 
-    @GetMapping(value="/reserveBook")
+    @GetMapping(value="/userHome/reserveBook")
     public String viewHomePageBorrowedBooksUser(Model modelBorrowedBooksUser) {
         List<BorrowedBooks> listBorrowedBooks = serviceBooks.listAll();
         modelBorrowedBooksUser.addAttribute("listBorrowedBooks", listBorrowedBooks);

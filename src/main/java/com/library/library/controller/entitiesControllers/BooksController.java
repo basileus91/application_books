@@ -51,7 +51,7 @@ public class BooksController {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveBooks(@ModelAttribute("books") Books books,
+    public String saveBooks(@ModelAttribute("books") @Valid Books books,
                             @RequestParam("cover") MultipartFile file,
                             BindingResult bindingResult
                             ) {
