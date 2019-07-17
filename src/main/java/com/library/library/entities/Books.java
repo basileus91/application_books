@@ -4,6 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.sql.Blob;
 import java.sql.Date;
 
@@ -17,7 +21,10 @@ public class Books {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
+
     @Column(name = "book_name")
+    @NotNull
+    @Size(min=2, max=30)
     private String bookName;
 
     @Column(name="publish_date")
@@ -40,7 +47,9 @@ public class Books {
     @JoinColumn(name = "publisher_id", nullable = false)
     private Publishers publishers;
 
+
     @Column(name="exemplar_numbers")
-    private int exemplarNumber;
+    @Min(1)
+    private Integer exemplarNumber;
 
 }

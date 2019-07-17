@@ -3,26 +3,30 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
+
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}"/>
 <title>Create New Book</title>
 </head>
 <body>
 	<div align="center">
 		<h1>Create New Book</h1>
 		<br />
-		<form enctype="multipart/form-data" th:action="@{/home/books/save}" th:object="${books} "
+		<form enctype="multipart/form-data" th:action="@{/home/books/save}" th:object="${books}"
 			method="post" >
-
 			<table border="0" cellpadding="10">
 				<tr>
 					<td>Book Name:</td>
 					<td><input type="text" th:field="*{bookName}" /></td>
+					<td th:if="${#fields.hasErrors('bookName')}" th:errors="*{bookName}">Book Name
+						Error</td>
 				</tr>
 				<tr>
 					<td>Publish Date:</td>
 					<td><input type="date" th:field="*{publishDate}" /></td>
 				</tr>
-				</tr>-->
-			</tr>-->
+				</tr>
+			</tr>
 				<tr>
 					<td>Author FirstName:</td>
 					<td><input type="text" th:field="*{authors.firstName}" /></td>
@@ -31,11 +35,15 @@
 					<td>Author LastName:</td>
 					<td><input type="text" th:field="*{authors.lastName}" /></td>
 				</tr>
+
 				<tr>
+<!--					<td>Number of Exemplars:</td>-->
+<!--					<td><input type="text" th:field="*{exemplarNumber}" /></td>-->
 					<td>Number of Exemplars:</td>
 					<td><input type="text" th:field="*{exemplarNumber}" /></td>
+					<td th:if="${#fields.hasErrors('exemplarNumber')}" th:errors="*{exemplarNumber}">Exemplar  Error</td>
 				</tr>
-				</tr>-->
+				</tr>
 				<tr>
 					<td>Publisher Name :</td>
 					<td><input type="text" th:field="*{publishers.publisherName}" /></td>
@@ -44,9 +52,6 @@
 					<td>Upload Book Image :</td>
 					<td><input type="file" th:name="cover"/></td>
 				</tr>
-<!--				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>-->
-<!--				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>-->
-
 				<tr>
 					<td colspan="2"><button type="submit">Save</button> </td>
 				</tr>

@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.sql.Date;
 
 @Getter
@@ -25,6 +26,7 @@ public class Clients {
     @Column(name="birth_date")
     private Date birthDate;
 
+    @Email
     @Column
     private String email;
 

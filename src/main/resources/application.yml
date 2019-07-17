@@ -16,3 +16,7 @@ upload:
   file:
     directory: /home/images
     extensions: jpg,jpeg,gif,png
+server:
+  error:
+    whitelabel:
+      enabled: false
