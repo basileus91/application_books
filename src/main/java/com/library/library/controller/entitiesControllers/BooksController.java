@@ -31,12 +31,6 @@ import java.util.Optional;
 @RequestMapping("/home/books")
 public class BooksController {
 
-    @InitBinder
-    public void iniBinder(WebDataBinder binder){
-        binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
-    }
-    public String finalString = null;
-
     @Autowired
     private BooksService service;
 
@@ -95,20 +89,5 @@ public class BooksController {
         return "redirect:/home/books";
     }
 
-
-    public String checkNullString (String str){
-        String endString = null;
-        if(str == null|| str.isEmpty()){
-            System.out.println("yes it is empty");
-            str = null;
-            Optional<String> opt = Optional.ofNullable(str);
-            endString = opt.orElse("None");
-            System.out.println("endString: "+endString);
-        }
-        else{
-            ;
-        }
-        return endString;
-    }
 }
 

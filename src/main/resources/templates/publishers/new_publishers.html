@@ -3,29 +3,45 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Create New Publisher</title>
 </head>
 <body>
-<div align="center">
-    <h1>Create New Publisher</h1>
-    <br />
-    <form th:action="@{/home/publishers/save}" th:object="${publishers}"
-          method="post">
-
-        <table border="0" cellpadding="10">
-            <tr>
-                <td>Publisher Name:</td>
-                <td><input type="text" th:field="*{publisherName}" /></td>
-            </tr>
-            <tr>
-                <td>Publisher Address:</td>
-                <td><input type="text" th:field="*{address}" /></td>
-            </tr>
-            <tr>
-                <td colspan="2"><button type="submit">Save</button> </td>
-            </tr>
-        </table>
-    </form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form th:action="@{/home/publishers/save}" th:object="${publishers}"
+                  method="post">
+                <h2 class="col-sm-9">Create New Publisher</h2>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('publisherName')}" th:errors="*{publisherName}"
+                               class="validation-message"></label>
+                        <input type="text" th:field="*{publisherName}" placeholder="Publisher"
+                               class="form-control"/>
+                    </div>
+                </div>
+                </br>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('address')}" th:errors="*{address}"
+                               class="validation-message"></label>
+                        <input type="text" th:field="*{address}" placeholder="Address"
+                               class="form-control"/>
+                    </div>
+                </div>
+                </br>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <button type="submit" class="btn btn-primary btn-block">Add Publisher</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>

@@ -23,8 +23,7 @@ public class Books {
 
 
     @Column(name = "book_name")
-    @NotNull
-    @Size(min=2, max=30)
+    @NotEmpty(message = "*Please provide a book name")
     private String bookName;
 
     @Column(name="publish_date")

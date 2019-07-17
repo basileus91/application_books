@@ -3,60 +3,90 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
-
-
 	<link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <title>Create New Book</title>
 </head>
+</br>
 <body>
-	<div align="center">
-		<h1>Create New Book</h1>
-		<br />
-		<form enctype="multipart/form-data" th:action="@{/home/books/save}" th:object="${books}"
-			method="post" >
-			<table border="0" cellpadding="10">
-				<tr>
-					<td>Book Name:</td>
-					<td><input type="text" th:field="*{bookName}" /></td>
-					<td th:if="${#fields.hasErrors('bookName')}" th:errors="*{bookName}">Book Name
-						Error</td>
-				</tr>
-				<tr>
-					<td>Publish Date:</td>
-					<td><input type="date" th:field="*{publishDate}" /></td>
-				</tr>
-				</tr>
-			</tr>
-				<tr>
-					<td>Author FirstName:</td>
-					<td><input type="text" th:field="*{authors.firstName}" /></td>
-				</tr>
-				<tr>
-					<td>Author LastName:</td>
-					<td><input type="text" th:field="*{authors.lastName}" /></td>
-				</tr>
-
-				<tr>
-<!--					<td>Number of Exemplars:</td>-->
-<!--					<td><input type="text" th:field="*{exemplarNumber}" /></td>-->
-					<td>Number of Exemplars:</td>
-					<td><input type="text" th:field="*{exemplarNumber}" /></td>
-					<td th:if="${#fields.hasErrors('exemplarNumber')}" th:errors="*{exemplarNumber}">Exemplar  Error</td>
-				</tr>
-				</tr>
-				<tr>
-					<td>Publisher Name :</td>
-					<td><input type="text" th:field="*{publishers.publisherName}" /></td>
-				</tr>
-				<tr>
-					<td>Upload Book Image :</td>
-					<td><input type="file" th:name="cover"/></td>
-				</tr>
-				<tr>
-					<td colspan="2"><button type="submit">Save</button> </td>
-				</tr>
-			</table>
-		</form>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<form enctype="multipart/form-data" th:action="@{/home/books/save}" th:object="${books}"
+					  method="post">
+					<h2 class="col-sm-9">Create New Book Form</h2>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<label th:if="${#fields.hasErrors('bookName')}" th:errors="*{bookName}"
+								   class="validation-message"></label>
+							<input type="text" th:field="*{bookName}" placeholder="Book Name"
+								   class="form-control"/>
+						</div>
+					</div>
+				    </br>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<label th:if="${#fields.hasErrors('publishDate')}" th:errors="*{publishDate}"
+								   class="validation-message"></label>
+							<input type="date" th:field="*{publishDate}" placeholder="Publish Date"
+								   class="form-control"/>
+						</div>
+					</div>
+					</br>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<label th:if="${#fields.hasErrors('authors.firstName')}" th:errors="*{authors.firstName}"
+								   class="validation-message"></label>
+							<input type="text" th:field="*{authors.firstName}" placeholder="Author First Name"
+								   class="form-control"/>
+						</div>
+					</div>
+					</br>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<label th:if="${#fields.hasErrors('authors.lastName')}" th:errors="*{authors.lastName}"
+								   class="validation-message"></label>
+							<input type="text" th:field="*{authors.lastName}" placeholder="Author Last Name"
+								   class="form-control"/>
+						</div>
+					</div>
+					</br>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<label th:if="${#fields.hasErrors('exemplarNumber')}" th:errors="*{exemplarNumber}"
+								   class="validation-message"></label>
+							<input type="text" th:field="*{exemplarNumber}"
+								   placeholder="Number of Exemplars" class="form-control"/>
+						</div>
+					</div>
+					</br>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="text" th:field="*{publishers.publisherName}" placeholder="Publisher"
+								   class="form-control"/> <label
+								th:if="${#fields.hasErrors('publishers.publisherName')}" th:errors="*{publishers.publisherName}"
+								class="validation-message"></label>
+						</div>
+					</div>
+					</br>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="file" th:name="cover"/>
+						</div>
+					</div>
+					</br>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<button type="submit" class="btn btn-primary btn-block">Add Book</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
+
 </body>
 </html>
