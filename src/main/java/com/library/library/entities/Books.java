@@ -27,7 +27,7 @@ public class Books {
     private String bookName;
 
     @Column(name="publish_date")
-    @DateTimeFormat(pattern = "MM.dd.yy")
+//    @DateTimeFormat(pattern = "MM.dd.yy")
     private Date publishDate;
 
     @Column(name="is_edited")

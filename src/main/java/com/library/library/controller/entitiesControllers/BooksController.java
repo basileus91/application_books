@@ -69,8 +69,14 @@ public class BooksController {
             e.printStackTrace();
         }
 
-
         ModelAndView modelAndView = new ModelAndView();
+
+        List<Publishers> listPublishers = publishersService.listAll();
+        modelAndView.addObject("listPublishers", listPublishers);
+
+        List<Authors> listAuthors = authorsService.listAll();
+        modelAndView.addObject("listAuthors", listAuthors);
+
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("books/new_book");
         }else {

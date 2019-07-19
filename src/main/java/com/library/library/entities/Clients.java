@@ -28,7 +28,7 @@ public class Clients {
     private String lastName;
 
     @Column(name="birth_date")
-    @DateTimeFormat(pattern = "MM.dd.yy")
+//    @DateTimeFormat(pattern = "MM.dd.yy")
     private Date birthDate;
 
     @Email

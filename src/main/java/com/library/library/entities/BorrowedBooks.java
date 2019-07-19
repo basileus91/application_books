@@ -18,11 +18,11 @@ public class BorrowedBooks {
     private Integer id;
 
     @Column(name="borrowed_date")
-    @DateTimeFormat(pattern = "MM.dd.yy")
+//    @DateTimeFormat(pattern = "MM.dd.yy")
     private Date borrowedDate;
 
     @Column(name="returned_date")
-    @DateTimeFormat(pattern = "MM.dd.yy")
+//    @DateTimeFormat(pattern = "MM.dd.yy")
     private Date returnedDate;
 
     @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.MERGE)
