@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/buttons.css}"/>
@@ -13,7 +13,7 @@
     <a href="/home/publishers" class="buttons">Publishers</a>&nbsp&nbsp&nbsp&nbsp
     <a href="/home/authors" class="buttons">Authors</a>&nbsp&nbsp&nbsp&nbsp
     <a href="/home/clients" class="buttons">Clients</a>&nbsp&nbsp&nbsp&nbsp
-    <a href="/borrowed_books" class="buttons">BorrowedBooks</a>
+    <a href="/borrowed_books" class="buttons">BorrowedBooks</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <a href="/logout" class="logout-button">Logout</a>
 <!--    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>-->
 
@@ -47,6 +47,10 @@
 <br/><br/>
 </body>
 <footer>
+    <div sec:authorize="hasRole('ROLE_ADMIN')">
+        Logged user: [[${#httpServletRequest.remoteUser}]] |
+        Role: Administrator
+    </div>
     <div align="center" th:insert="~{footer::copy}">&copy; 2019 The Static Templates</div>
 </footer>
 </html>

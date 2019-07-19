@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/buttons.css}"/>
@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/logout-button.css}"/>
 
     <title>Book Manager</title>
+    Hello  [[${#httpServletRequest.remoteUser}]] !
     <a href="/logout" class="logout-button">Logout</a>
 </head>
 <body>
@@ -40,6 +41,7 @@
 <br/><br/>
 </body>
 <footer>
+
     <div align="center" th:insert="~{footer::copy}">&copy; 2019 The Static Templates</div>
 </footer>
 </html>
