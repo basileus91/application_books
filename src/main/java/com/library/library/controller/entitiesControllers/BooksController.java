@@ -58,6 +58,10 @@ public class BooksController {
         modelAndView.addObject("listPublishers", listPublishers);
         System.out.println(" ++++++++++ "+listPublishers);
 
+        List<Authors> listAuthors = authorsService.listAll();
+        modelAndView.addObject("listAuthors", listAuthors);
+        System.out.println(" ++++++++++ "+listPublishers);
+
         Books books = new Books();
         modelAndView.addObject("books", books);
         modelAndView.setViewName("books/new_book");

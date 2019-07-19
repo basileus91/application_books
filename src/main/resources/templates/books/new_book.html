@@ -46,64 +46,25 @@
 					</div>
 
 					<div class="form-group">
-						<div class="col-sm-9">
-							<label th:if="${#fields.hasErrors('authors.id')}" th:errors="*{authors.id}"
-								   class="validation-message"></label>
-							<input type="text" th:field="*{authors.id}" placeholder="Authors Id"
-								   class="form-control"/>
+						<div class="col-sm-9"> Author:
+							<select th:field="*{authors}">
+								<option th:each="one : ${listAuthors}"
+										th:value="${one.id}"
+										th:text="${one.firstName +' '+one.lastName}" />
+							</select>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<div hidden="true" class="col-sm-9" >
-							<label th:if="${#fields.hasErrors('authors.firstName')}" th:errors="*{authors.firstName}"
-								   class="validation-message"></label>
-							<input type="text" th:field="*{authors.firstName}" placeholder="Author First Name"
-								   class="form-control"/>
+						<div class="col-sm-9"> Publisher:
+						<select th:field="*{publishers}">
+							<option th:each="one : ${listPublishers}"
+									th:value="${one.id}"
+									th:text="${one.publisherName}" />
+						</select>
 						</div>
 					</div>
 
-					<div class="form-group">
-						<div hidden="true" class="col-sm-9">
-							<label th:if="${#fields.hasErrors('authors.lastName')}" th:errors="*{authors.lastName}"
-								   class="validation-message"></label>
-							<input type="text" th:field="*{authors.lastName}" placeholder="Author Last Name"
-								   class="form-control"/>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<div class="col-sm-9">
-							<label th:if="${#fields.hasErrors('publishers.id')}" th:errors="*{publishers.id}"
-								   class="validation-message"></label>
-							<input type="text" th:field="*{publishers.id}"
-								   placeholder="Publisher Id" class="form-control"/>
-						</div>
-					</div>
-
-
-					<div class="form-group">
-
-						<div hidden="true" class="col-sm-9">
-							<label
-									th:if="${#fields.hasErrors('publishers.publisherName')}" th:errors="*{publishers.publisherName}"
-									class="validation-message"></label>
-							<input type="text" th:field="*{publishers.publisherName}" placeholder="Publisher"
-								   class="form-control"/>
-<!--								Here is how to make a drop down for other list
-									<select th:field="*{publishers}">-->
-<!--								<option th:each="one : ${listPublishers}"-->
-<!--										th:value="${one.id}"-->
-<!--										th:text="${one.publisherName}" />-->
-<!--							</select>-->
-							</br>
-						</div>
-					</div>
-					<div class="form-group">
-
-						<div class="col-sm-9">
-						</div>
-					</div>
 					<div class="form-group">
 						<div class="col-sm-9">
 							<input type="file" th:name="cover"/>
