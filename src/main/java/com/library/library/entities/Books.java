@@ -2,13 +2,10 @@ package com.library.library.entities;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
 import java.sql.Date;
 
 @Getter
@@ -27,7 +24,7 @@ public class Books {
     private String bookName;
 
     @Column(name="publish_date")
-//    @DateTimeFormat(pattern = "MM.dd.yy")
+//    @DateTimeFormat(pattern = "MM.dd.yyyy")
     private Date publishDate;
 
     @Column(name="is_edited")

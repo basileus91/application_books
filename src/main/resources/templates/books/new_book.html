@@ -31,7 +31,7 @@
 						<div class="col-sm-9"> Publish Date:
 							<label th:if="${#fields.hasErrors('publishDate')}" th:errors="*{publishDate}"
 								   class="validation-message"></label>
-							<input type="date" th:field="*{publishDate}" placeholder="Publish Date"
+							<input type="date" th:pattern="MM-dd-yyyy" th:field="*{publishDate}" placeholder="Publish Date"
 								   class="form-control"/>
 						</div>
 					</div>

@@ -34,12 +34,11 @@
                     </div>
                 </div>
                 </br>
-                <span th:text="*{books.bookName}"/>
                 <div class="form-group">
                     <div class="col-sm-9">
                         <label th:if="${#fields.hasErrors('books')}" th:errors="*{books}"
                                class="validation-message"></label>
-                        <input type="text" th:field="*{books.bookName}"  placeholder="Book"
+                        <input type="text" th:field="*{books.id}"  placeholder="Book"
                                class="form-control"/>
                     </div>
                 </div>
