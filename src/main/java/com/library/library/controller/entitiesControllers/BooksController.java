@@ -1,7 +1,11 @@
 package com.library.library.controller.entitiesControllers;
 
+import com.library.library.entities.Authors;
 import com.library.library.entities.Books;
+import com.library.library.entities.Publishers;
+import com.library.library.services.AuthorsService;
 import com.library.library.services.BooksService;
+import com.library.library.services.PublishersService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.slf4j.Logger;
@@ -34,6 +38,12 @@ public class BooksController {
     @Autowired
     private BooksService service;
 
+    @Autowired
+    private AuthorsService authorsService;
+
+    @Autowired
+    private PublishersService publishersService;
+
     @GetMapping
     public String viewHomePageBooks(Model modelBooks) {
         List<Books> listBooks = service.listAll();
@@ -41,37 +51,49 @@ public class BooksController {
         return "books/books";
     }
 
-    @RequestMapping("/new")
-    public String showNewBooksPage(Model model) {
+    @RequestMapping(value="/new", method = RequestMethod.GET)
+    public ModelAndView newBook(ModelAndView modelAndView ){
+
+        List<Publishers> listPublishers = publishersService.listAll();
+        modelAndView.addObject("listPublishers", listPublishers);
+        System.out.println(" ++++++++++ "+listPublishers);
 
         Books books = new Books();
-        model.addAttribute("books", books);
+        modelAndView.addObject("books", books);
+        modelAndView.setViewName("books/new_book");
 
-        return "books/new_book";
+
+
+
+
+        return modelAndView;
+
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveBooks(@ModelAttribute("books") @Valid Books books,
-                            @RequestParam("cover") MultipartFile file,
-                            BindingResult bindingResult
-                            ) {
+    @RequestMapping(value = "/new", method = RequestMethod.POST)
+    public ModelAndView createNewUser(@Valid Books books,
+                                      @RequestParam("cover") MultipartFile file,
+                                      BindingResult bindingResult
+                                      ) {
 
-        //        log.debug(file.getName());
-        try {
+        ModelAndView modelAndView = new ModelAndView();
+        if (bindingResult.hasErrors()) {
+            modelAndView.setViewName("books/new_book");
+        } else {
+
+            try {
             String imageString = Base64.encodeBase64String(file.getBytes());
             books.setBookImage(imageString);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        if(bindingResult.hasErrors()){
-            return "books/new_book";
-        }else{
-
             service.save(books);
+            modelAndView.addObject("books", new Books());
+            modelAndView.setViewName("redirect:/home/books");
 
-            return "redirect:/home/books";
         }
+        return modelAndView;
     }
 
     @RequestMapping("/edit/{id}")
@@ -88,6 +110,8 @@ public class BooksController {
         service.delete(id);
         return "redirect:/home/books";
     }
+
+
 
 }
 

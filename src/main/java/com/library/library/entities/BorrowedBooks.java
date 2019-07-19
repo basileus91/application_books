@@ -22,11 +22,11 @@ public class BorrowedBooks {
     @Column(name="returned_date")
     private Date returnedDate;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.MERGE)
     @JoinColumn(name = "book_id", nullable = false)
     private Books books;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.MERGE)
     @JoinColumn(name = "client_id", nullable = false)
     private Clients clients;
 }

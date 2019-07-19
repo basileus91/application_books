@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import java.sql.Date;
 
 @Getter
@@ -18,9 +19,11 @@ public class Clients {
     private Integer id;
 
     @Column(name="first_name")
+    @NotEmpty(message = "Please provide a name")
     private String firstName;
 
     @Column(name="last_name")
+    @NotEmpty(message = "Please provide a last name")
     private String lastName;
 
     @Column(name="birth_date")
@@ -28,9 +31,11 @@ public class Clients {
 
     @Email
     @Column
+    @NotEmpty(message = "Please provide a email")
     private String email;
 
     @Column(name="phone_number")
+    @NotEmpty(message = "Please provide a phone number")
     private String phoneNumber;
 
 }

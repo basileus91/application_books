@@ -5,9 +5,11 @@ import com.library.library.services.PublishersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -25,20 +27,28 @@ public class PublishersController {
         return "publishers/publishers";
     }
 
-    @RequestMapping("/new")
-    public String showNewPublishersPage(Model model) {
+    @RequestMapping(value="/new", method = RequestMethod.GET)
+    public ModelAndView newPublisher(){
+        ModelAndView modelAndView = new ModelAndView();
         Publishers publishers = new Publishers();
-        model.addAttribute("publishers", publishers);
-
-        return "publishers/new_publishers";
+        modelAndView.addObject("publishers", publishers);
+        modelAndView.setViewName("publishers/new_publishers");
+        return modelAndView;
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String savePublishers(@ModelAttribute("publishers") Publishers publishers) {
-        service.save(publishers);
+    @RequestMapping(value = "/new", method = RequestMethod.POST)
+    public ModelAndView createNewPublisher(@Valid Publishers publishers,
+                                        BindingResult bindingResult) {
+        ModelAndView modelAndView = new ModelAndView();
+        if (bindingResult.hasErrors()) {
+            modelAndView.setViewName("publishers/new_publishers");
+        } else {
+            service.save(publishers);
+            modelAndView.addObject("publishers", publishers);
+            modelAndView.setViewName("redirect:/home/publishers");
 
-        return "redirect:/home/publishers";
-
+        }
+        return modelAndView;
     }
 
     @RequestMapping("/edit/{id}")

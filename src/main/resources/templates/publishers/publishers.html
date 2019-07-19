@@ -16,7 +16,6 @@
     <table border="1" cellpadding="10">
         <thead>
         <tr>
-            <th>PublisherID</th>
             <th>PublisherName</th>
             <th>PublisherAddress</th>
             <th>Actions</th>
@@ -24,7 +23,6 @@
         </thead>
         <tbody>
         <tr th:each="publishers : ${listPublishers}">
-            <td th:text="${publishers.id}">Publisher ID</td>
             <td th:text="${publishers.publisherName}">Publisher Name</td>
             <td th:text="${publishers.address}">Publisher Address</td>
             <td>

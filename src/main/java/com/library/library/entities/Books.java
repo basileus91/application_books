@@ -4,11 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.sql.Blob;
+import javax.validation.constraints.PastOrPresent;
 import java.sql.Date;
 
 @Getter
@@ -27,6 +25,7 @@ public class Books {
     private String bookName;
 
     @Column(name="publish_date")
+//    @PastOrPresent
     private Date publishDate;
 
     @Column(name="is_edited")
@@ -38,17 +37,19 @@ public class Books {
     @Column(name="book_image")
     private String bookImage;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER,cascade=CascadeType.MERGE)
     @JoinColumn(name = "author_id", nullable = false)
+    @NotNull
     private Authors authors;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER,cascade=CascadeType.MERGE)
     @JoinColumn(name = "publisher_id", nullable = false)
+    @NotNull
     private Publishers publishers;
 
 
     @Column(name="exemplar_numbers")
-    @Min(1)
+    @NotNull(message = "Field cannot be empty")
     private Integer exemplarNumber;
 
 }

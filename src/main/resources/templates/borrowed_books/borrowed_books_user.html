@@ -14,7 +14,6 @@
     <table border="1" cellpadding="10">
         <thead>
         <tr>
-            <th>BookID</th>
             <th>Client</th>
             <th>BookName</th>
             <th>BorrowedDate</th>
@@ -24,7 +23,6 @@
         </thead>
         <tbody>
         <tr th:each="borrowed_books : ${listBorrowedBooks}">
-            <td th:text="${borrowed_books.id}">BookID</td>
             <td th:text="${borrowed_books.clients.getFirstName()+' '+borrowed_books.clients.getLastName()}">Client</td>
             <td th:text="${borrowed_books.getBooks().bookName}">BookName</td>
             <td th:text="${borrowed_books.borrowedDate}">BorrowedDate</td>

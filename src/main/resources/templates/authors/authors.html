@@ -16,7 +16,6 @@
     <table border="1" cellpadding="10">
         <thead>
         <tr>
-            <th>AuthorID</th>
             <th>FirstName</th>
             <th>LastName</th>
             <th>Nationality</th>
@@ -25,7 +24,6 @@
         </thead>
         <tbody>
         <tr th:each=" authors : ${listAuthors}">
-            <td th:text="${authors.id}">Author ID</td>
             <td th:text="${authors.firstName}">FirstName</td>
             <td th:text="${authors.lastName}">LastName</td>
             <td th:text="${authors.nationality}">LastName</td>

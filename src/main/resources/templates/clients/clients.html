@@ -16,7 +16,6 @@
     <table border="1" cellpadding="10">
         <thead>
         <tr>
-            <th>ClientID</th>
             <th>FirstName</th>
             <th>LastName</th>
             <th>BirthDate</th>
@@ -27,7 +26,6 @@
         </thead>
         <tbody>
         <tr th:each=" clients : ${listClients}">
-            <td th:text="${clients.id}">Author ID</td>
             <td th:text="${clients.firstName}">FirstName</td>
             <td th:text="${clients.lastName}">LastName</td>
             <td th:date="${clients.birthDate}">LastName</td>

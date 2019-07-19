@@ -31,7 +31,7 @@
                 <img th:src="@{'data:image/jpeg;base64,'+${books.bookImage}}" style="width:100px;height:100px;" alt=""/>
                 <p><span th:text="${books.authors.getFirstName()+' '+books.authors.getLastName()}"/></p>
                 <p><span th:text="${books.publishers.getPublisherName()}"/></p>
-                <p><button><a href="/userHome/reserveBook">Book Card</a></button></p>
+                <p><button><a href="/userHome/new">Book Card</a></button></p>
             </div>
         </div>
     </div>

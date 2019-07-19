@@ -56,7 +56,6 @@
     <table border="1" cellpadding="10">
         <thead>
         <tr>
-            <th>BookID</th>
             <th>Name</th>
             <th>Publish Date</th>
             <th>IsEdited</th>
@@ -70,7 +69,6 @@
         </thead>
         <tbody>
         <tr th:each="books : ${listBooks}">
-            <td th:text="${books.id}">Product ID</td>
             <td th:text="${books.bookName}">Name</td>
             <td th:text="${books.publishDate}">Publish Date</td>
             <td><input type="checkbox" name="active" th:checked="${books.isEdited()}"> </td>

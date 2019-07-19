@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Edit Book</title>
+</head>
+<body>
+<div align="center">
+    <h1>Edit Borrow Book</h1>
+    <br />
+    <form enctype="multipart/form-data" th:action="@{/borrowed_books/new}" th:object="${borrowed_books}"
+          method="post">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Borrow Date:</td>
+                <td>
+                    <input type="date" th:field="*{borrowedDate}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Return Date:</td>
+                <td>
+                    <input type="date" th:field="*{returnedDate}" />
+                </td>
+            </tr>
+            <tr>
+                <td><input hidden="true" readonly="true" type="text" th:field="*{books.id}" /></td>
+            </tr>
+            <tr>
+                <td>Book Name:</td>
+                <td><input readonly="true" type="text" th:field="*{books.bookName}" /></td>
+            </tr>
+            <tr>
+                <td>Client Id:</td>
+                <td><input type="text" th:field="*{clients.id}" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

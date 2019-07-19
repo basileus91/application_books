@@ -5,9 +5,11 @@ import com.library.library.services.ClientsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -26,20 +28,28 @@ public class ClientsController {
         return "clients/clients";
     }
 
-
-    @RequestMapping("/new")
-    public String showNewAClientsPage(Model model) {
+    @RequestMapping(value="/new", method = RequestMethod.GET)
+    public ModelAndView newClient(){
+        ModelAndView modelAndView = new ModelAndView();
         Clients clients = new Clients();
-        model.addAttribute("clients", clients);
-
-        return "clients/new_clients";
+        modelAndView.addObject("clients", clients);
+        modelAndView.setViewName("clients/new_clients");
+        return modelAndView;
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveClients(@ModelAttribute("clients") Clients clients) {
-        service.save(clients);
+    @RequestMapping(value = "/new", method = RequestMethod.POST)
+    public ModelAndView createNewClient(@Valid Clients clients,
+                                      BindingResult bindingResult) {
+        ModelAndView modelAndView = new ModelAndView();
+        if (bindingResult.hasErrors()) {
+            modelAndView.setViewName("clients/new_clients");
+        } else {
+            service.save(clients);
+            modelAndView.addObject("clients", clients);
+            modelAndView.setViewName("redirect:/home/clients");
 
-        return "redirect:/home/clients";
+        }
+        return modelAndView;
     }
 
     @RequestMapping("/edit/{id}")
