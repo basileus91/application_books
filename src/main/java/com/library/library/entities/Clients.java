@@ -2,6 +2,7 @@ package com.library.library.entities;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -27,6 +28,7 @@ public class Clients {
     private String lastName;
 
     @Column(name="birth_date")
+    @DateTimeFormat(pattern = "MM.dd.yy")
     private Date birthDate;
 
     @Email

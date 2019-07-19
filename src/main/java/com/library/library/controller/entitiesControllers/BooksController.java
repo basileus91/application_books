@@ -8,27 +8,17 @@ import com.library.library.services.BooksService;
 import com.library.library.services.PublishersService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.codec.binary.Base64;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-import sun.misc.BASE64Encoder;
 
-import javax.imageio.ImageIO;
 import javax.validation.Valid;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.nio.ByteBuffer;
-import java.util.Date;
+import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -56,48 +46,40 @@ public class BooksController {
 
         List<Publishers> listPublishers = publishersService.listAll();
         modelAndView.addObject("listPublishers", listPublishers);
-        System.out.println(" ++++++++++ "+listPublishers);
 
         List<Authors> listAuthors = authorsService.listAll();
         modelAndView.addObject("listAuthors", listAuthors);
-        System.out.println(" ++++++++++ "+listPublishers);
 
         Books books = new Books();
         modelAndView.addObject("books", books);
         modelAndView.setViewName("books/new_book");
 
-
-
-
-
         return modelAndView;
-
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
-    public ModelAndView createNewUser(@Valid Books books,
-                                      @RequestParam("cover") MultipartFile file,
-                                      BindingResult bindingResult
+    public ModelAndView createNewBook(@Valid Books books,
+                                      BindingResult bindingResult,
+                                      @RequestParam("cover") MultipartFile file
                                       ) {
-
-        ModelAndView modelAndView = new ModelAndView();
-        if (bindingResult.hasErrors()) {
-            modelAndView.setViewName("books/new_book");
-        } else {
-
-            try {
+        try {
             String imageString = Base64.encodeBase64String(file.getBytes());
             books.setBookImage(imageString);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-            service.save(books);
-            modelAndView.addObject("books", new Books());
-            modelAndView.setViewName("redirect:/home/books");
 
+        ModelAndView modelAndView = new ModelAndView();
+        if (bindingResult.hasErrors()) {
+            modelAndView.setViewName("books/new_book");
+        }else {
+            service.save(books);
+            modelAndView.addObject("books", books);
+            modelAndView.setViewName("redirect:/home/books");
         }
-        return modelAndView;
+
+            return modelAndView;
     }
 
     @RequestMapping("/edit/{id}")

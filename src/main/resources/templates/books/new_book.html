@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+	  xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}"/>
@@ -15,14 +15,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-				<form enctype="multipart/form-data" th:action="@{/home/books/new}" th:object="${books}"
-					  method="post">
+				<form th:action="@{/home/books/new}" th:object="${books}"
+					  method="post" enctype="multipart/form-data" >
 					<h2 class="col-sm-9">Create New Book Form</h2>
 					<div class="form-group">
 						<div class="col-sm-9">
 							<label th:if="${#fields.hasErrors('bookName')}" th:errors="*{bookName}"
 								   class="validation-message"></label>
-							<input type="text" id="bookName" d th:field="*{bookName}" placeholder="Book Name"
+							<input type="text"  th:field="*{bookName}" placeholder="Book Name"
 								   class="form-control"/>
 						</div>
 					</div>
@@ -76,7 +76,7 @@
 
 					<div class="form-group">
 						<div class="col-sm-9">
-							<button type="submit" th:action="@{/home/books}" class="btn btn-primary btn-block">Add Book</button>
+							<button type="submit" class="btn btn-primary btn-block">Add Book</button>
 						</div>
 					</div>
 				</form>

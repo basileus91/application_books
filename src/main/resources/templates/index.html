@@ -13,7 +13,7 @@
     <a href="/home/publishers" class="buttons">Publishers</a>&nbsp&nbsp&nbsp&nbsp
     <a href="/home/authors" class="buttons">Authors</a>&nbsp&nbsp&nbsp&nbsp
     <a href="/home/clients" class="buttons">Clients</a>&nbsp&nbsp&nbsp&nbsp
-    <a href="/borrowed_books" class="buttons">BorrowedBooks</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href="/borrowed_books" class="buttons">BorrowedBooks</a>
     <a href="/logout" class="logout-button">Logout</a>
 <!--    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>-->
 
@@ -39,7 +39,7 @@
                         <img th:src="@{'data:image/jpeg;base64,'+${books.bookImage}}" style="width:100px;height:100px;" alt=""/>
                         <p><span th:text="${books.authors.getFirstName()+' '+books.authors.getLastName()}"/></p>
                         <p><span th:text="${books.publishers.getPublisherName()}"/></p>
-                        <p><button><a th:href="@{'/borrowed_books/new' }" >Book Card</a></button></p>
+                        <p><button><a th:href="@{'/borrowed_books/new/'+${books.bookName} }" >Book Card</a></button></p>
                     </div>
                 </div>
             </div>

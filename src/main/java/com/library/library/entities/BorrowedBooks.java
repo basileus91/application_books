@@ -2,6 +2,7 @@ package com.library.library.entities;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -17,9 +18,11 @@ public class BorrowedBooks {
     private Integer id;
 
     @Column(name="borrowed_date")
+    @DateTimeFormat(pattern = "MM.dd.yy")
     private Date borrowedDate;
 
     @Column(name="returned_date")
+    @DateTimeFormat(pattern = "MM.dd.yy")
     private Date returnedDate;
 
     @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.MERGE)

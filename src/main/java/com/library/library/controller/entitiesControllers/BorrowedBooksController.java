@@ -49,9 +49,9 @@ public class BorrowedBooksController {
 //        return "redirect:/home/borrowed_books";
 //    }
 
-    @GetMapping(value="/new")
+    @GetMapping(value="/new/{bookName}")
     public ModelAndView newBorrowedBook(
-//                                    @PathVariable(name = "bookName") String bookName
+                                    @PathVariable(name = "bookName") String bookName
     ){
         ModelAndView modelAndView = new ModelAndView();
         BorrowedBooks borrowed_books = new BorrowedBooks();
