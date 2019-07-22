@@ -64,12 +64,11 @@
             <th>PublisherName</th>
             <th>NumberOfExemplar</th>
             <th>Actions</th>
-            <th>Test</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="books : ${listBooks}">
-            <td th:text="${books.bookName}">Name</td>
+            <td><a th:href="@{'/home/books/edit/' + ${books.id}}"> <span th:text="${books.bookName}"/> </a></td>
             <td th:text="${books.publishDate}">Publish Date</td>
             <td><input type="checkbox" name="active" th:checked="${books.isEdited()}"> </td>
             <td><input type="checkbox" name="active" th:checked="${books.isBorrowed()}"> </td>
@@ -82,15 +81,15 @@
                 &nbsp;&nbsp;&nbsp;
                 <a th:href="@{'/home/books/delete/' + ${books.id}}">Delete</a>
             </td>
-            <td>
+
 <!--                This is a test dropdown-->
-                <div>
-                <select th:field="*{listBooks}">
-                    <option value="">Select Book</option>
-                    <option th:each="books : ${listBooks}" th:value="${books.bookName}" th:text="${books.bookName}"></option>
-                </select>
-                </div>
-            </td>
+<!--                <div>-->
+<!--                <select th:field="*{listBooks}">-->
+<!--                    <option value="">Select Book</option>-->
+<!--                    <option th:each="books : ${listBooks}" th:value="${books.bookName}" th:text="${books.bookName}"></option>-->
+<!--                </select>-->
+<!--                </div>-->
+
         </tr>
         </tbody>
     </table>

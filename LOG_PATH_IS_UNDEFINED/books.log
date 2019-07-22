@@ -5962,3 +5962,618 @@ Caused by: java.lang.IllegalStateException: Cannot find changelog location: clas
 2019-07-22 13:52:47,375 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
 2019-07-22 13:52:47,380 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 5 ms
 2019-07-22 13:52:56,790 INFO [http-nio-8080-exec-2] o.h.h.i.QueryTranslatorFactoryInitiator [QueryTranslatorFactoryInitiator.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2019-07-22 13:58:26,472 INFO [Thread-12] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-22 13:58:26,475 INFO [Thread-12] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 13:58:26,477 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-22 13:58:26,480 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-22 13:58:28,126 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 17012 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-22 13:58:28,127 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-22 13:58:28,528 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-22 13:58:28,573 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 40ms. Found 7 repository interfaces.
+2019-07-22 13:58:28,755 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$da252e8e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 13:58:28,890 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-22 13:58:28,898 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-22 13:58:28,903 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-22 13:58:28,903 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-22 13:58:28,942 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-22 13:58:28,942 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 787 ms
+2019-07-22 13:58:29,008 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-22 13:58:29,165 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-22 13:58:29,367 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 13:58:29,369 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 13:58:29,370 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-22 13:58:29,376 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-22 13:58:29,800 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-22 13:58:29,800 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-22 13:58:29,801 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-22 13:58:29,801 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-22 13:58:29,816 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-22 13:58:29,816 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-22 13:58:29,818 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-22 13:58:29,844 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-22 13:58:29,851 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-22 13:58:29,872 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-22 13:58:29,896 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-22 13:58:29,897 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-22 13:58:29,948 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-22 13:58:30,001 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-22 13:58:30,074 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@23321be7
+2019-07-22 13:58:30,381 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 13:58:30,772 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-22 13:58:30,772 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-22 13:58:30,772 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-22 13:58:30,772 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-22 13:58:30,772 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-22 13:58:30,772 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-22 13:58:30,786 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39159b14, org.springframework.security.web.context.SecurityContextPersistenceFilter@6636448b, org.springframework.security.web.header.HeaderWriterFilter@22b10124, org.springframework.security.web.authentication.logout.LogoutFilter@70ad0854, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2ae88712, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3d12f065, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@107ebdad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57ab4b33, org.springframework.security.web.session.SessionManagementFilter@4088702d, org.springframework.security.web.access.ExceptionTranslationFilter@35f35c59, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d563c13]
+2019-07-22 13:58:30,858 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-22 13:58:30,876 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-22 13:58:30,917 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-22 13:58:30,929 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-22 13:58:30,987 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-22 13:58:30,994 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-22 13:58:30,995 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 3.199 seconds (JVM running for 3.465)
+2019-07-22 13:58:36,645 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-22 13:58:36,645 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2019-07-22 13:58:36,650 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 5 ms
+2019-07-22 13:58:47,051 INFO [http-nio-8080-exec-8] o.h.h.i.QueryTranslatorFactoryInitiator [QueryTranslatorFactoryInitiator.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2019-07-22 13:59:09,229 INFO [Thread-12] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-22 13:59:09,230 INFO [Thread-12] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 13:59:09,232 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-22 13:59:09,233 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-22 13:59:11,027 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 17201 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-22 13:59:11,029 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-22 13:59:11,484 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-22 13:59:11,526 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 39ms. Found 7 repository interfaces.
+2019-07-22 13:59:11,706 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1af91100] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 13:59:11,826 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-22 13:59:11,832 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-22 13:59:11,836 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-22 13:59:11,837 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-22 13:59:11,884 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-22 13:59:11,884 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 790 ms
+2019-07-22 13:59:11,958 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-22 13:59:12,103 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-22 13:59:12,287 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 13:59:12,288 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 13:59:12,289 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-22 13:59:12,296 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-22 13:59:12,730 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-22 13:59:12,731 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-22 13:59:12,731 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-22 13:59:12,731 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-22 13:59:12,757 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-22 13:59:12,757 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-22 13:59:12,759 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-22 13:59:12,784 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-22 13:59:12,792 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-22 13:59:12,811 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-22 13:59:12,834 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-22 13:59:12,835 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-22 13:59:12,886 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-22 13:59:12,939 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-22 13:59:13,010 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@312f3050
+2019-07-22 13:59:13,319 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 13:59:13,657 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-22 13:59:13,657 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-22 13:59:13,657 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-22 13:59:13,657 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-22 13:59:13,657 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-22 13:59:13,657 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-22 13:59:13,671 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58d79479, org.springframework.security.web.context.SecurityContextPersistenceFilter@345540f9, org.springframework.security.web.header.HeaderWriterFilter@33a7331, org.springframework.security.web.authentication.logout.LogoutFilter@acb1c9c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5e72c82a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44a98a23, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@70ad0854, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@102c24d1, org.springframework.security.web.session.SessionManagementFilter@50d4775b, org.springframework.security.web.access.ExceptionTranslationFilter@3d12f065, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ae88712]
+2019-07-22 13:59:13,741 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-22 13:59:13,758 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-22 13:59:13,800 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-22 13:59:13,812 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-22 13:59:13,877 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-22 13:59:13,884 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-22 13:59:13,886 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 3.185 seconds (JVM running for 3.435)
+2019-07-22 13:59:16,254 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-22 13:59:16,254 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2019-07-22 13:59:16,259 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 5 ms
+2019-07-22 13:59:21,816 INFO [http-nio-8080-exec-6] o.h.h.i.QueryTranslatorFactoryInitiator [QueryTranslatorFactoryInitiator.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2019-07-22 14:00:13,715 INFO [Thread-12] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:00:13,716 INFO [Thread-12] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:00:13,717 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-22 14:00:13,718 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-22 14:00:15,603 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 17418 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-22 14:00:15,605 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-22 14:00:16,000 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-22 14:00:16,042 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 38ms. Found 7 repository interfaces.
+2019-07-22 14:00:16,221 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$af7008fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 14:00:16,342 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-22 14:00:16,355 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:00:16,359 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-22 14:00:16,359 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-22 14:00:16,397 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-22 14:00:16,397 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 748 ms
+2019-07-22 14:00:16,467 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-22 14:00:16,630 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-22 14:00:16,819 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:00:16,820 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:00:16,821 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-22 14:00:16,828 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-22 14:00:17,248 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-22 14:00:17,249 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-22 14:00:17,249 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-22 14:00:17,249 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-22 14:00:17,263 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-22 14:00:17,264 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-22 14:00:17,266 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-22 14:00:17,290 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-22 14:00:17,298 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-22 14:00:17,318 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-22 14:00:17,341 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-22 14:00:17,342 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-22 14:00:17,395 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-22 14:00:17,449 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-22 14:00:17,530 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@126675fd
+2019-07-22 14:00:17,856 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:00:18,243 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-22 14:00:18,243 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-22 14:00:18,243 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-22 14:00:18,244 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-22 14:00:18,244 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-22 14:00:18,244 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-22 14:00:18,257 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39159b14, org.springframework.security.web.context.SecurityContextPersistenceFilter@6636448b, org.springframework.security.web.header.HeaderWriterFilter@22b10124, org.springframework.security.web.authentication.logout.LogoutFilter@70ad0854, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2ae88712, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3d12f065, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@107ebdad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57ab4b33, org.springframework.security.web.session.SessionManagementFilter@4088702d, org.springframework.security.web.access.ExceptionTranslationFilter@35f35c59, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d563c13]
+2019-07-22 14:00:18,331 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:00:18,348 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-22 14:00:18,390 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-22 14:00:18,402 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-22 14:00:18,461 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:00:18,469 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-22 14:00:18,470 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 3.11 seconds (JVM running for 3.378)
+2019-07-22 14:00:21,482 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-22 14:00:21,482 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2019-07-22 14:00:21,489 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 7 ms
+2019-07-22 14:00:27,063 INFO [http-nio-8080-exec-8] o.h.h.i.QueryTranslatorFactoryInitiator [QueryTranslatorFactoryInitiator.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2019-07-22 14:02:16,938 INFO [Thread-12] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:02:16,939 INFO [Thread-12] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:02:16,940 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-22 14:02:16,942 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-22 14:02:18,768 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 17670 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-22 14:02:18,805 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-22 14:02:19,211 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-22 14:02:19,253 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 39ms. Found 7 repository interfaces.
+2019-07-22 14:02:19,430 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$af7008fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 14:02:19,550 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-22 14:02:19,557 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:02:19,561 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-22 14:02:19,561 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-22 14:02:19,609 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-22 14:02:19,609 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 778 ms
+2019-07-22 14:02:19,681 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-22 14:02:19,835 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-22 14:02:20,020 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:02:20,021 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:02:20,022 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-22 14:02:20,027 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-22 14:02:20,441 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-22 14:02:20,442 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-22 14:02:20,442 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-22 14:02:20,442 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-22 14:02:20,460 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-22 14:02:20,460 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-22 14:02:20,464 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-22 14:02:20,490 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-22 14:02:20,498 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-22 14:02:20,519 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-22 14:02:20,545 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-22 14:02:20,546 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-22 14:02:20,609 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-22 14:02:20,666 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-22 14:02:20,739 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@126675fd
+2019-07-22 14:02:21,036 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:02:21,373 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-22 14:02:21,373 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-22 14:02:21,374 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-22 14:02:21,374 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-22 14:02:21,374 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-22 14:02:21,374 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-22 14:02:21,387 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39159b14, org.springframework.security.web.context.SecurityContextPersistenceFilter@6636448b, org.springframework.security.web.header.HeaderWriterFilter@22b10124, org.springframework.security.web.authentication.logout.LogoutFilter@70ad0854, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2ae88712, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3d12f065, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@107ebdad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57ab4b33, org.springframework.security.web.session.SessionManagementFilter@4088702d, org.springframework.security.web.access.ExceptionTranslationFilter@35f35c59, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d563c13]
+2019-07-22 14:02:21,457 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:02:21,474 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-22 14:02:21,515 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-22 14:02:21,527 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-22 14:02:21,585 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:02:21,593 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-22 14:02:21,594 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 3.174 seconds (JVM running for 3.426)
+2019-07-22 14:02:23,314 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-22 14:02:23,314 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2019-07-22 14:02:23,319 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 5 ms
+2019-07-22 14:02:29,454 INFO [http-nio-8080-exec-8] o.h.h.i.QueryTranslatorFactoryInitiator [QueryTranslatorFactoryInitiator.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2019-07-22 14:03:34,288 INFO [Thread-12] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:03:34,289 INFO [Thread-12] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:03:34,290 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-22 14:03:34,292 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-22 14:03:35,895 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 17869 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-22 14:03:35,897 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-22 14:03:36,443 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-22 14:03:36,505 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 56ms. Found 7 repository interfaces.
+2019-07-22 14:03:36,731 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5160f9da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 14:03:36,877 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-22 14:03:36,890 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:03:36,894 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-22 14:03:36,895 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-22 14:03:36,935 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-22 14:03:36,935 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 977 ms
+2019-07-22 14:03:36,997 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-22 14:03:37,142 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-22 14:03:37,326 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:03:37,327 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:03:37,328 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-22 14:03:37,335 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-22 14:03:37,755 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-22 14:03:37,755 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-22 14:03:37,756 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-22 14:03:37,756 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-22 14:03:37,773 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-22 14:03:37,774 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-22 14:03:37,776 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-22 14:03:37,800 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-22 14:03:37,808 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-22 14:03:37,827 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-22 14:03:37,851 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-22 14:03:37,851 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-22 14:03:37,902 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-22 14:03:37,958 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-22 14:03:38,035 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@38cf3ae1
+2019-07-22 14:03:38,340 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:03:38,730 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-22 14:03:38,730 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-22 14:03:38,730 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-22 14:03:38,730 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-22 14:03:38,730 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-22 14:03:38,730 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-22 14:03:38,744 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@55315a00, org.springframework.security.web.context.SecurityContextPersistenceFilter@70ad0854, org.springframework.security.web.header.HeaderWriterFilter@767cc126, org.springframework.security.web.authentication.logout.LogoutFilter@6be2b567, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3225d950, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@339cde4b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@393e7546, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4942e6af, org.springframework.security.web.session.SessionManagementFilter@272c5abd, org.springframework.security.web.access.ExceptionTranslationFilter@1bfafce1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58d79479]
+2019-07-22 14:03:38,817 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:03:38,835 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-22 14:03:38,896 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-22 14:03:38,917 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-22 14:03:38,999 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:03:39,008 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-22 14:03:39,009 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 3.404 seconds (JVM running for 3.709)
+2019-07-22 14:03:41,869 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-22 14:03:41,870 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2019-07-22 14:03:41,876 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 6 ms
+2019-07-22 14:03:50,449 INFO [http-nio-8080-exec-8] o.h.h.i.QueryTranslatorFactoryInitiator [QueryTranslatorFactoryInitiator.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2019-07-22 14:05:09,352 INFO [Thread-12] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:05:09,354 INFO [Thread-12] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:05:09,355 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-22 14:05:09,357 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-22 14:05:11,052 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 18251 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-22 14:05:11,054 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-22 14:05:11,481 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-22 14:05:11,524 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 39ms. Found 7 repository interfaces.
+2019-07-22 14:05:11,750 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c134dfa9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 14:05:11,878 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-22 14:05:11,885 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:05:11,889 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-22 14:05:11,889 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-22 14:05:11,940 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-22 14:05:11,941 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 837 ms
+2019-07-22 14:05:12,016 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-22 14:05:12,160 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-22 14:05:12,347 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:05:12,347 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:05:12,348 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-22 14:05:12,353 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-22 14:05:12,768 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-22 14:05:12,769 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-22 14:05:12,769 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-22 14:05:12,770 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-22 14:05:12,785 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-22 14:05:12,785 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-22 14:05:12,787 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-22 14:05:12,822 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-22 14:05:12,830 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-22 14:05:12,849 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-22 14:05:12,873 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-22 14:05:12,874 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-22 14:05:12,925 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-22 14:05:12,982 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-22 14:05:13,054 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5560b64d
+2019-07-22 14:05:13,354 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:05:13,706 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-22 14:05:13,707 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-22 14:05:13,707 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-22 14:05:13,707 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-22 14:05:13,707 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-22 14:05:13,707 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-22 14:05:13,724 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@da11873, org.springframework.security.web.context.SecurityContextPersistenceFilter@4c24c40a, org.springframework.security.web.header.HeaderWriterFilter@2245ccaa, org.springframework.security.web.authentication.logout.LogoutFilter@60c8909a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@24520a51, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e18e693, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44a98a23, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39159b14, org.springframework.security.web.session.SessionManagementFilter@6f36e806, org.springframework.security.web.access.ExceptionTranslationFilter@6cb43fd3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64cdc310]
+2019-07-22 14:05:13,806 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:05:13,826 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-22 14:05:13,873 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-22 14:05:13,886 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-22 14:05:13,952 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:05:13,961 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-22 14:05:13,962 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 3.174 seconds (JVM running for 3.402)
+2019-07-22 14:05:15,213 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-22 14:05:15,213 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2019-07-22 14:05:15,217 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 4 ms
+2019-07-22 14:05:20,899 INFO [http-nio-8080-exec-8] o.h.h.i.QueryTranslatorFactoryInitiator [QueryTranslatorFactoryInitiator.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2019-07-22 14:05:40,523 INFO [Thread-12] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:05:40,524 INFO [Thread-12] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:05:40,525 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-22 14:05:40,529 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-22 14:05:42,218 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 18442 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-22 14:05:42,221 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-22 14:05:42,685 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-22 14:05:42,731 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 42ms. Found 7 repository interfaces.
+2019-07-22 14:05:42,930 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c134dfa9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 14:05:43,057 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-22 14:05:43,063 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:05:43,068 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-22 14:05:43,068 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-22 14:05:43,107 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-22 14:05:43,107 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 860 ms
+2019-07-22 14:05:43,170 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-22 14:05:43,315 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-22 14:05:43,506 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:05:43,506 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:05:43,507 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-22 14:05:43,514 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-22 14:05:43,932 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-22 14:05:43,932 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-22 14:05:43,933 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-22 14:05:43,933 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-22 14:05:43,948 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-22 14:05:43,949 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-22 14:05:43,951 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-22 14:05:43,976 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-22 14:05:43,984 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-22 14:05:44,003 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-22 14:05:44,026 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-22 14:05:44,027 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-22 14:05:44,079 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-22 14:05:44,131 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-22 14:05:44,201 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5560b64d
+2019-07-22 14:05:44,512 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:05:44,907 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-22 14:05:44,908 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-22 14:05:44,908 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-22 14:05:44,908 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-22 14:05:44,908 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-22 14:05:44,908 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-22 14:05:44,922 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@46d51d5e, org.springframework.security.web.context.SecurityContextPersistenceFilter@57fc6759, org.springframework.security.web.header.HeaderWriterFilter@4c24c40a, org.springframework.security.web.authentication.logout.LogoutFilter@1774c4e2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@39159b14, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7aef21bb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@138a952f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@530df3ab, org.springframework.security.web.session.SessionManagementFilter@3e18e693, org.springframework.security.web.access.ExceptionTranslationFilter@6f36e806, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1ea19c97]
+2019-07-22 14:05:44,996 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:05:45,014 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-22 14:05:45,056 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-22 14:05:45,069 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-22 14:05:45,127 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:05:45,135 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-22 14:05:45,136 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 3.217 seconds (JVM running for 3.447)
+2019-07-22 14:05:49,746 INFO [Thread-12] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:05:49,747 INFO [Thread-12] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:05:49,748 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-22 14:05:49,750 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-22 14:05:51,413 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 18653 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-22 14:05:51,414 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-22 14:05:51,799 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-22 14:05:51,858 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 53ms. Found 7 repository interfaces.
+2019-07-22 14:05:52,040 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a84f5b39] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 14:05:52,171 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-22 14:05:52,179 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:05:52,183 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-22 14:05:52,184 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-22 14:05:52,234 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-22 14:05:52,235 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 794 ms
+2019-07-22 14:05:52,313 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-22 14:05:52,503 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-22 14:05:52,694 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:05:52,694 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:05:52,695 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-22 14:05:52,702 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-22 14:05:53,119 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-22 14:05:53,120 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-22 14:05:53,120 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-22 14:05:53,120 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-22 14:05:53,137 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-22 14:05:53,137 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-22 14:05:53,140 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-22 14:05:53,164 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-22 14:05:53,172 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-22 14:05:53,192 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-22 14:05:53,215 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-22 14:05:53,215 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-22 14:05:53,268 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-22 14:05:53,321 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-22 14:05:53,401 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@3cdfbbef
+2019-07-22 14:05:53,710 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:05:54,054 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-22 14:05:54,054 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-22 14:05:54,054 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-22 14:05:54,054 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-22 14:05:54,054 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-22 14:05:54,054 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-22 14:05:54,068 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@57617a75, org.springframework.security.web.context.SecurityContextPersistenceFilter@138a952f, org.springframework.security.web.header.HeaderWriterFilter@44a98a23, org.springframework.security.web.authentication.logout.LogoutFilter@3fcc7f5c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@700202fa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6bfdaed7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@28b68067, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3794b7b1, org.springframework.security.web.session.SessionManagementFilter@e3275d3, org.springframework.security.web.access.ExceptionTranslationFilter@345540f9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@46d51d5e]
+2019-07-22 14:05:54,138 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:05:54,155 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-22 14:05:54,196 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-22 14:05:54,208 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-22 14:05:54,269 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:05:54,277 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-22 14:05:54,278 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 3.218 seconds (JVM running for 3.527)
+2019-07-22 14:06:06,932 INFO [Thread-12] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:06:06,933 INFO [Thread-12] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:06:06,934 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-22 14:06:06,935 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-22 14:06:08,824 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 18846 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-22 14:06:08,826 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-22 14:06:09,246 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-22 14:06:09,306 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 55ms. Found 7 repository interfaces.
+2019-07-22 14:06:09,516 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$93533f0d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 14:06:09,647 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-22 14:06:09,653 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:06:09,657 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-22 14:06:09,658 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-22 14:06:09,695 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-22 14:06:09,695 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 843 ms
+2019-07-22 14:06:09,757 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-22 14:06:09,900 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-22 14:06:10,086 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:06:10,087 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:06:10,088 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-22 14:06:10,095 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-22 14:06:10,509 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-22 14:06:10,510 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-22 14:06:10,511 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-22 14:06:10,511 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-22 14:06:10,526 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-22 14:06:10,527 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-22 14:06:10,529 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-22 14:06:10,554 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-22 14:06:10,562 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-22 14:06:10,581 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-22 14:06:10,604 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-22 14:06:10,605 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-22 14:06:10,656 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-22 14:06:10,709 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-22 14:06:10,779 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@52856ff9
+2019-07-22 14:06:11,088 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:06:11,477 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-22 14:06:11,477 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-22 14:06:11,477 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-22 14:06:11,477 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-22 14:06:11,477 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-22 14:06:11,477 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-22 14:06:11,491 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@470a446f, org.springframework.security.web.context.SecurityContextPersistenceFilter@60c8909a, org.springframework.security.web.header.HeaderWriterFilter@138a952f, org.springframework.security.web.authentication.logout.LogoutFilter@b5d7233, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3794b7b1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76208b80, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@411933, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@55315a00, org.springframework.security.web.session.SessionManagementFilter@6bfdaed7, org.springframework.security.web.access.ExceptionTranslationFilter@e3275d3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64fba3e6]
+2019-07-22 14:06:11,562 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:06:11,579 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-22 14:06:11,623 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-22 14:06:11,637 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-22 14:06:11,703 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:06:11,712 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-22 14:06:11,713 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 3.197 seconds (JVM running for 3.432)
+2019-07-22 14:06:13,043 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-22 14:06:13,043 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2019-07-22 14:06:13,048 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 5 ms
+2019-07-22 14:06:18,882 INFO [http-nio-8080-exec-6] o.h.h.i.QueryTranslatorFactoryInitiator [QueryTranslatorFactoryInitiator.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2019-07-22 14:06:27,859 INFO [Thread-12] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:06:27,860 INFO [Thread-12] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:06:27,861 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-22 14:06:27,862 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-22 14:06:29,571 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 18995 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-22 14:06:29,573 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-22 14:06:30,045 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-22 14:06:30,093 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 43ms. Found 7 repository interfaces.
+2019-07-22 14:06:30,286 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$49c14a4a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 14:06:30,406 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-22 14:06:30,412 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:06:30,416 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-22 14:06:30,417 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-22 14:06:30,470 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-22 14:06:30,471 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 867 ms
+2019-07-22 14:06:30,533 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-22 14:06:30,680 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-22 14:06:30,869 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:06:30,869 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:06:30,870 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-22 14:06:30,877 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-22 14:06:31,297 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-22 14:06:31,298 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-22 14:06:31,298 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-22 14:06:31,299 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-22 14:06:31,316 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-22 14:06:31,316 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-22 14:06:31,318 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-22 14:06:31,343 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-22 14:06:31,350 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-22 14:06:31,371 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-22 14:06:31,394 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-22 14:06:31,395 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-22 14:06:31,446 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-22 14:06:31,499 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-22 14:06:31,569 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@7d626f2
+2019-07-22 14:06:31,862 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:06:32,190 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-22 14:06:32,190 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-22 14:06:32,190 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-22 14:06:32,191 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-22 14:06:32,191 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-22 14:06:32,191 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-22 14:06:32,205 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@670ae31f, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d8d671b, org.springframework.security.web.header.HeaderWriterFilter@76208b80, org.springframework.security.web.authentication.logout.LogoutFilter@1fcfcf37, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@73a1a1b4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19540247, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32fd5bc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1958524b, org.springframework.security.web.session.SessionManagementFilter@1774c4e2, org.springframework.security.web.access.ExceptionTranslationFilter@60c8909a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@65698020]
+2019-07-22 14:06:32,276 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:06:32,293 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-22 14:06:32,334 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-22 14:06:32,346 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-22 14:06:32,403 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:06:32,411 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-22 14:06:32,412 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 3.168 seconds (JVM running for 3.403)
+2019-07-22 14:06:41,356 INFO [Thread-12] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:06:41,358 INFO [Thread-12] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:06:41,359 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-22 14:06:41,361 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-22 14:06:42,942 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 19146 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-22 14:06:42,944 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-22 14:06:43,314 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-22 14:06:43,355 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 38ms. Found 7 repository interfaces.
+2019-07-22 14:06:43,527 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1af91100] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-22 14:06:43,650 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-22 14:06:43,663 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:06:43,668 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-22 14:06:43,668 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-22 14:06:43,709 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-22 14:06:43,709 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 708 ms
+2019-07-22 14:06:43,774 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-22 14:06:43,921 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-22 14:06:44,110 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:06:44,111 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-22 14:06:44,112 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-22 14:06:44,119 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-22 14:06:44,546 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-22 14:06:44,547 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-22 14:06:44,547 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-22 14:06:44,548 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-22 14:06:44,564 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-22 14:06:44,564 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-22 14:06:44,567 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-22 14:06:44,596 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-22 14:06:44,605 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-22 14:06:44,628 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-22 14:06:44,655 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-22 14:06:44,656 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-22 14:06:44,714 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-22 14:06:44,775 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-22 14:06:44,858 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@312f3050
+2019-07-22 14:06:45,225 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-22 14:06:45,602 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-22 14:06:45,602 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-22 14:06:45,602 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-22 14:06:45,602 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-22 14:06:45,602 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-22 14:06:45,602 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-22 14:06:45,615 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58d79479, org.springframework.security.web.context.SecurityContextPersistenceFilter@345540f9, org.springframework.security.web.header.HeaderWriterFilter@33a7331, org.springframework.security.web.authentication.logout.LogoutFilter@acb1c9c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5e72c82a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44a98a23, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@70ad0854, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@102c24d1, org.springframework.security.web.session.SessionManagementFilter@50d4775b, org.springframework.security.web.access.ExceptionTranslationFilter@3d12f065, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ae88712]
+2019-07-22 14:06:45,685 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-22 14:06:45,702 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-22 14:06:45,743 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-22 14:06:45,755 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-22 14:06:45,812 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-22 14:06:45,820 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-22 14:06:45,821 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 3.163 seconds (JVM running for 3.395)
+2019-07-22 14:06:46,988 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-22 14:06:46,988 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2019-07-22 14:06:46,995 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 7 ms
+2019-07-22 14:06:52,821 INFO [http-nio-8080-exec-8] o.h.h.i.QueryTranslatorFactoryInitiator [QueryTranslatorFactoryInitiator.java:47] HHH000397: Using ASTQueryTranslatorFactory
