@@ -68,7 +68,7 @@
         </thead>
         <tbody>
         <tr th:each="books : ${listBooks}">
-            <td><a th:href="@{'/home/books/edit/' + ${books.id}}"> <span th:text="${books.bookName}"/> </a></td>
+            <td><a readonly="true" th:href="@{'/home/books/edit/' + ${books.id}}"> <span th:text="${books.bookName}"/> </a></td>
             <td th:text="${books.publishDate}">Publish Date</td>
             <td><input type="checkbox" name="active" th:checked="${books.isEdited()}"> </td>
             <td><input type="checkbox" name="active" th:checked="${books.isBorrowed()}"> </td>

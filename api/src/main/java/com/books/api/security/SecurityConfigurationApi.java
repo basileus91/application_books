@@ -1,4 +1,4 @@
-package com.books.frontend.security;
+package com.books.api.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,8 +16,8 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
-@Order(value = 1)
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+@Order(value = 2)
+public class SecurityConfigurationApi extends WebSecurityConfigurerAdapter {
 
 
     @Autowired
@@ -49,11 +49,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http.
                 authorizeRequests()
-                .antMatchers("/").permitAll()
-                .antMatchers("/login").permitAll()
-                .antMatchers("/registration").permitAll()
-                .antMatchers("/userHome/**").hasAuthority("USER")
-                .antMatchers("/home/**").hasAuthority("ADMIN").anyRequest()
+                .antMatchers("/api/**").hasAuthority("API_ADMIN").anyRequest()
                 .authenticated().and().csrf().disable().formLogin()
 
                 .loginPage("/login").failureUrl("/login?error=true")
