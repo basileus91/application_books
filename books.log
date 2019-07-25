@@ -1,0 +1,500 @@
+2019-07-24 13:09:42,819 INFO [main] c.b.d.DataApp [StartupInfoLogger.java:50] Starting DataApp on ubuntu-pc5 with PID 5319 (/home/ubuntu/Downloads/library/data/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-24 13:09:42,821 INFO [main] c.b.d.DataApp [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2019-07-24 13:09:43,165 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-24 13:09:43,214 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 44ms. Found 7 repository interfaces.
+2019-07-24 13:09:43,369 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$61e5499a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-24 13:09:43,488 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-24 13:09:43,495 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-24 13:09:43,500 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-24 13:09:43,500 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-24 13:09:43,542 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-24 13:09:43,543 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 670 ms
+2019-07-24 13:09:43,565 INFO [main] o.s.b.w.s.RegistrationBean [DynamicRegistrationBean.java:110] Servlet webServlet was not registered (possibly already registered?)
+2019-07-24 13:09:43,619 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-24 13:09:43,665 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-24 13:09:43,880 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-07-24 13:09:43,884 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE PUBLIC.DATABASECHANGELOGLOCK (ID INT NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP, LOCKEDBY VARCHAR(255), CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
+2019-07-24 13:09:43,887 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-07-24 13:09:43,888 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] DELETE FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-07-24 13:09:43,889 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOGLOCK (ID, LOCKED) VALUES (1, FALSE)
+2019-07-24 13:09:43,890 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM PUBLIC.DATABASECHANGELOGLOCK WHERE ID=1
+2019-07-24 13:09:43,894 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-24 13:09:44,319 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2019-07-24 13:09:44,320 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE PUBLIC.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-07-24 13:09:44,321 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG
+2019-07-24 13:09:44,321 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from PUBLIC.DATABASECHANGELOG
+2019-07-24 13:09:44,321 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM PUBLIC.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-24 13:09:44,322 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-07-24 13:09:44,338 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.books (id INT AUTO_INCREMENT NOT NULL, book_name VARCHAR(50) NOT NULL, publish_date date, is_edited BOOLEAN, is_borrowed BOOLEAN, author_id INT(4) NOT NULL, publisher_id INT(4) NOT NULL, exemplar_numbers INT(4) NOT NULL, book_image CLOB, CONSTRAINT PK_BOOKS PRIMARY KEY (id))
+2019-07-24 13:09:44,340 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table books created
+2019-07-24 13:09:44,341 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019132930-create-books-table.yml::create_books::vasile ran successfully in 3ms
+2019-07-24 13:09:44,341 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MAX(ORDEREXECUTED) FROM PUBLIC.DATABASECHANGELOG
+2019-07-24 13:09:44,343 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_books', 'vasile', 'db/changelog/03072019132930-create-books-table.yml', NOW(), 1, '8:284ed9175c4d41fccca1466b3ee1c2cb', 'createTable tableName=books', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,344 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.authors (id INT AUTO_INCREMENT NOT NULL, first_name VARCHAR(50) NOT NULL, last_name VARCHAR(50) NOT NULL, nationality VARCHAR(50), CONSTRAINT PK_AUTHORS PRIMARY KEY (id))
+2019-07-24 13:09:44,345 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table authors created
+2019-07-24 13:09:44,345 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019133140-create-authors-table.yml::create_authors::vasile ran successfully in 1ms
+2019-07-24 13:09:44,345 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_authors', 'vasile', 'db/changelog/03072019133140-create-authors-table.yml', NOW(), 2, '8:b65a2ba04be00772267a6683b19dd627', 'createTable tableName=authors', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,346 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.clients (first_name VARCHAR(50) NOT NULL, last_name VARCHAR(50) NOT NULL, birth_date date, email VARCHAR(50), phone_number VARCHAR(50), id INT AUTO_INCREMENT NOT NULL, CONSTRAINT PK_CLIENTS PRIMARY KEY (id))
+2019-07-24 13:09:44,347 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table clients created
+2019-07-24 13:09:44,347 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019133210-create-clients-table.yml::create_clients::vasile ran successfully in 1ms
+2019-07-24 13:09:44,347 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_clients', 'vasile', 'db/changelog/03072019133210-create-clients-table.yml', NOW(), 3, '8:3e2629be588069d4a15fbd7e18c97d16', 'createTable tableName=clients', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,348 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.publishers (id INT AUTO_INCREMENT NOT NULL, publisher_name VARCHAR(50) NOT NULL, address VARCHAR(50), CONSTRAINT PK_PUBLISHERS PRIMARY KEY (id))
+2019-07-24 13:09:44,349 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table publishers created
+2019-07-24 13:09:44,349 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019133320-create-publishers-table.yml::create_publishers::vasile ran successfully in 1ms
+2019-07-24 13:09:44,349 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_publishers', 'vasile', 'db/changelog/03072019133320-create-publishers-table.yml', NOW(), 4, '8:9f51f08e83907944ff0313860fd3b961', 'createTable tableName=publishers', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,350 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.borrowed_books (id INT AUTO_INCREMENT NOT NULL, borrowed_date date, returned_date date, book_id INT NOT NULL, client_id INT(4) NOT NULL, CONSTRAINT PK_BORROWED_BOOKS PRIMARY KEY (id))
+2019-07-24 13:09:44,350 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table borrowed_books created
+2019-07-24 13:09:44,351 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019133350-create-borrowed-book-table.yml::create_borrowed_books::vasile ran successfully in 1ms
+2019-07-24 13:09:44,351 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_borrowed_books', 'vasile', 'db/changelog/03072019133350-create-borrowed-book-table.yml', NOW(), 5, '8:8cf5079ef9f38a484355acc36b484069', 'createTable tableName=borrowed_books', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,352 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] ALTER TABLE PUBLIC.books ADD CONSTRAINT fk_author_id FOREIGN KEY (author_id) REFERENCES PUBLIC.authors (id) ON UPDATE CASCADE ON DELETE CASCADE
+2019-07-24 13:09:44,355 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Foreign key constraint added to books (author_id)
+2019-07-24 13:09:44,356 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019153610-add-foreign-key-authors.yml::addForeignKeyConstraintOnAuthors::vasile ran successfully in 5ms
+2019-07-24 13:09:44,356 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('addForeignKeyConstraintOnAuthors', 'vasile', 'db/changelog/03072019153610-add-foreign-key-authors.yml', NOW(), 6, '8:916ab79b7a33e49202d09043dce53baa', 'addForeignKeyConstraint baseTableName=books, constraintName=fk_author_id, referencedTableName=authors', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,357 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] ALTER TABLE PUBLIC.books ADD CONSTRAINT fk_publisher_id FOREIGN KEY (publisher_id) REFERENCES PUBLIC.publishers (id) ON UPDATE CASCADE ON DELETE CASCADE
+2019-07-24 13:09:44,358 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Foreign key constraint added to books (publisher_id)
+2019-07-24 13:09:44,358 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019153820-add-foreign-key-publishers.yml::addForeignKeyConstraintOnPublishers::vasile ran successfully in 1ms
+2019-07-24 13:09:44,358 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('addForeignKeyConstraintOnPublishers', 'vasile', 'db/changelog/03072019153820-add-foreign-key-publishers.yml', NOW(), 7, '8:814a9042bdb1b6a9ef4c9e943bb0a891', 'addForeignKeyConstraint baseTableName=books, constraintName=fk_publisher_id, referencedTableName=publishers', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,359 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] ALTER TABLE PUBLIC.borrowed_books ADD CONSTRAINT fk_book_id FOREIGN KEY (book_id) REFERENCES PUBLIC.books (id) ON UPDATE CASCADE ON DELETE CASCADE
+2019-07-24 13:09:44,360 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Foreign key constraint added to borrowed_books (book_id)
+2019-07-24 13:09:44,360 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019154010-add-foreign-key-books.yml::addForeignKeyConstraintOnBooks::vasile ran successfully in 1ms
+2019-07-24 13:09:44,360 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('addForeignKeyConstraintOnBooks', 'vasile', 'db/changelog/03072019154010-add-foreign-key-books.yml', NOW(), 8, '8:9d023cdc3bedd8387a70973c2f573c9a', 'addForeignKeyConstraint baseTableName=borrowed_books, constraintName=fk_book_id, referencedTableName=books', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,361 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] ALTER TABLE PUBLIC.borrowed_books ADD CONSTRAINT fk_client_id FOREIGN KEY (client_id) REFERENCES PUBLIC.clients (id) ON UPDATE CASCADE ON DELETE CASCADE
+2019-07-24 13:09:44,362 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Foreign key constraint added to borrowed_books (client_id)
+2019-07-24 13:09:44,362 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019154111-add-foreign-key-client.yml::addForeignKeyConstraintOnClients::vasile ran successfully in 1ms
+2019-07-24 13:09:44,362 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('addForeignKeyConstraintOnClients', 'vasile', 'db/changelog/03072019154111-add-foreign-key-client.yml', NOW(), 9, '8:41643b6b27b613a1e65af6da524d0ca7', 'addForeignKeyConstraint baseTableName=borrowed_books, constraintName=fk_client_id, referencedTableName=clients', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,363 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.user (user_id INT AUTO_INCREMENT NOT NULL, email VARCHAR(50) NOT NULL, password VARCHAR NOT NULL, name VARCHAR(50) NOT NULL, last_name VARCHAR(50) NOT NULL, active BOOLEAN, CONSTRAINT PK_USER PRIMARY KEY (user_id))
+2019-07-24 13:09:44,364 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table user created
+2019-07-24 13:09:44,364 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/12072019104025-add-user-table.yml::create_user::vasile ran successfully in 1ms
+2019-07-24 13:09:44,364 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_user', 'vasile', 'db/changelog/12072019104025-add-user-table.yml', NOW(), 10, '8:b8b8342a2e89cbdedd1c256bbbde1437', 'createTable tableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,365 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.role (role_id INT AUTO_INCREMENT NOT NULL, role VARCHAR(50) NOT NULL, CONSTRAINT PK_ROLE PRIMARY KEY (role_id))
+2019-07-24 13:09:44,365 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table role created
+2019-07-24 13:09:44,366 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/12072019104530-add-roles-table.yml::create_roles::vasile ran successfully in 1ms
+2019-07-24 13:09:44,366 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_roles', 'vasile', 'db/changelog/12072019104530-add-roles-table.yml', NOW(), 11, '8:bb0bceea645d8c6d84590610810f3a1d', 'createTable tableName=role', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,367 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.user_role (id INT AUTO_INCREMENT NOT NULL, user_id INT NOT NULL, role_id INT NOT NULL, CONSTRAINT PK_USER_ROLE PRIMARY KEY (id))
+2019-07-24 13:09:44,367 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table user_role created
+2019-07-24 13:09:44,367 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/12072019105101-add-user-role-table.yml::create_books::vasile ran successfully in 1ms
+2019-07-24 13:09:44,367 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_books', 'vasile', 'db/changelog/12072019105101-add-user-role-table.yml', NOW(), 12, '8:f33b2607462df4d64172c32479cbd07f', 'createTable tableName=user_role', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,368 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] ALTER TABLE PUBLIC.user_role ADD CONSTRAINT fk_role_id FOREIGN KEY (role_id) REFERENCES PUBLIC.role (role_id) ON UPDATE CASCADE ON DELETE CASCADE
+2019-07-24 13:09:44,369 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Foreign key constraint added to user_role (role_id)
+2019-07-24 13:09:44,369 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/12072019105335-add-foreign-key-roles.yml::addForeignKeyConstraintOnRoles::vasile ran successfully in 1ms
+2019-07-24 13:09:44,370 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('addForeignKeyConstraintOnRoles', 'vasile', 'db/changelog/12072019105335-add-foreign-key-roles.yml', NOW(), 13, '8:5460159a0cbf7ddd5ea72d4fb92f35db', 'addForeignKeyConstraint baseTableName=user_role, constraintName=fk_role_id, referencedTableName=role', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,370 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] ALTER TABLE PUBLIC.user_role ADD CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES PUBLIC.user (user_id) ON UPDATE CASCADE ON DELETE CASCADE
+2019-07-24 13:09:44,371 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Foreign key constraint added to user_role (user_id)
+2019-07-24 13:09:44,371 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/12072019110257-add-foreign-key-user.yml::addForeignKeyConstraintOnUser::vasile ran successfully in 1ms
+2019-07-24 13:09:44,371 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('addForeignKeyConstraintOnUser', 'vasile', 'db/changelog/12072019110257-add-foreign-key-user.yml', NOW(), 14, '8:005692117f7cd681a77c8b19014ba422', 'addForeignKeyConstraint baseTableName=user_role, constraintName=fk_user_id, referencedTableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '3962984322')
+2019-07-24 13:09:44,372 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-24 13:09:44,373 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-24 13:09:44,373 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-24 13:09:44,400 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-24 13:09:44,401 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-24 13:09:44,416 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-24 13:09:44,440 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-24 13:09:44,441 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-24 13:09:44,487 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-24 13:09:44,537 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-24 13:09:44,840 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-24 13:09:45,219 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 13:09:45,235 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-24 13:09:45,324 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-24 13:09:45,331 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-24 13:09:45,332 INFO [main] c.b.d.DataApp [StartupInfoLogger.java:59] Started DataApp in 2.804 seconds (JVM running for 3.065)
+2019-07-24 13:09:53,493 INFO [Thread-7] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-24 13:09:53,494 INFO [Thread-7] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-24 13:09:53,495 INFO [Thread-7] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-24 13:09:53,495 INFO [Thread-7] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-24 13:12:11,890 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 6497 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-24 13:12:11,891 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-24 13:12:12,277 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-24 13:12:12,318 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 37ms. Found 7 repository interfaces.
+2019-07-24 13:12:12,494 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4c40cfb0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-24 13:12:12,614 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-24 13:12:12,620 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-24 13:12:12,624 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-24 13:12:12,624 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-24 13:12:12,682 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-24 13:12:12,683 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 732 ms
+2019-07-24 13:12:12,751 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-24 13:12:12,897 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-24 13:12:13,085 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-24 13:12:13,086 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-24 13:12:13,087 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-24 13:12:13,092 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-24 13:12:13,511 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-24 13:12:13,512 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-24 13:12:13,512 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-24 13:12:13,512 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-24 13:12:13,527 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-24 13:12:13,528 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-24 13:12:13,530 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-24 13:12:13,555 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-24 13:12:13,563 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-24 13:12:13,583 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-24 13:12:13,606 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-24 13:12:13,607 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-24 13:12:13,658 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-24 13:12:13,719 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-24 13:12:13,804 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@2487e20
+2019-07-24 13:12:14,133 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-24 13:12:14,497 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-24 13:12:14,497 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-24 13:12:14,497 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-24 13:12:14,497 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-24 13:12:14,497 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-24 13:12:14,497 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-24 13:12:14,497 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-24 13:12:14,497 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-24 13:12:14,497 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-24 13:12:14,498 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-24 13:12:14,498 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-24 13:12:14,498 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-24 13:12:14,510 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/api/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c2edbe7, org.springframework.security.web.context.SecurityContextPersistenceFilter@68f75a35, org.springframework.security.web.header.HeaderWriterFilter@31dd0e2e, org.springframework.security.web.authentication.logout.LogoutFilter@45375bdf, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@64908ab9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45017263, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b360a82, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f53a31f, org.springframework.security.web.session.SessionManagementFilter@197180a5, org.springframework.security.web.access.ExceptionTranslationFilter@5b80b41d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@220f6a3c]
+2019-07-24 13:12:14,515 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e7113f8, org.springframework.security.web.context.SecurityContextPersistenceFilter@2911db81, org.springframework.security.web.header.HeaderWriterFilter@fb42c1c, org.springframework.security.web.authentication.logout.LogoutFilter@70cac22a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@13866865, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fce1069, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51b41740, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e149513, org.springframework.security.web.session.SessionManagementFilter@4edde05c, org.springframework.security.web.access.ExceptionTranslationFilter@5b71af0d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@27575bcd]
+2019-07-24 13:12:14,590 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 13:12:14,608 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-24 13:12:14,650 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-24 13:12:14,663 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-24 13:12:14,724 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-24 13:12:14,733 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-24 13:12:14,734 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 3.087 seconds (JVM running for 3.324)
+2019-07-24 13:12:23,133 INFO [Thread-12] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-24 13:12:23,134 INFO [Thread-12] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-24 13:12:23,135 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-24 13:12:23,137 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-24 13:12:35,589 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 6832 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-24 13:12:35,590 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-24 13:12:35,949 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-24 13:12:35,990 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 37ms. Found 7 repository interfaces.
+2019-07-24 13:12:36,162 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e5a273b3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-24 13:12:36,290 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-24 13:12:36,297 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-24 13:12:36,302 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-24 13:12:36,302 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-24 13:12:36,341 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-24 13:12:36,342 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 725 ms
+2019-07-24 13:12:36,405 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-24 13:12:37,543 ERROR [main] c.z.h.p.HikariPool [HikariPool.java:574] HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: FATAL: database "libraryg" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2440)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2559)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:133)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:250)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195)
+	at org.postgresql.Driver.makeConnection(Driver.java:454)
+	at org.postgresql.Driver.connect(Driver.java:256)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:302)
+	at org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase.afterPropertiesSet(DataSourceClosingSpringLiquibase.java:46)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.books.frontend.Launcher.main(Launcher.java:12)
+2019-07-24 13:12:37,546 WARN [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: FATAL: database "libraryg" does not exist
+2019-07-24 13:12:37,547 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Stopping service [Tomcat]
+2019-07-24 13:12:37,553 INFO [main] o.s.b.a.l.ConditionEvaluationReportLoggingListener [ConditionEvaluationReportLoggingListener.java:135] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-07-24 13:12:37,557 ERROR [main] o.s.b.SpringApplication [SpringApplication.java:821] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: FATAL: database "libraryg" does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.books.frontend.Launcher.main(Launcher.java:12)
+Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: FATAL: database "libraryg" does not exist
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:307)
+	at org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase.afterPropertiesSet(DataSourceClosingSpringLiquibase.java:46)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774)
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: FATAL: database "libraryg" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2440)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2559)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:133)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:250)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195)
+	at org.postgresql.Driver.makeConnection(Driver.java:454)
+	at org.postgresql.Driver.connect(Driver.java:256)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:302)
+	... 21 common frames omitted
+2019-07-24 13:27:50,277 INFO [main] c.b.a.ApiApp [StartupInfoLogger.java:50] Starting ApiApp on ubuntu-pc5 with PID 10624 (/home/ubuntu/Downloads/library/api/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-24 13:27:50,301 INFO [main] c.b.a.ApiApp [SpringApplication.java:646] No active profile set, falling back to default profiles: default
+2019-07-24 13:27:50,655 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-24 13:27:50,693 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 35ms. Found 7 repository interfaces.
+2019-07-24 13:27:50,852 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$aa9237d8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-24 13:27:50,963 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-24 13:27:50,969 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-24 13:27:50,973 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-24 13:27:50,973 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-24 13:27:51,014 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-24 13:27:51,015 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 692 ms
+2019-07-24 13:27:51,043 INFO [main] o.s.b.w.s.RegistrationBean [DynamicRegistrationBean.java:110] Servlet webServlet was not registered (possibly already registered?)
+2019-07-24 13:27:51,086 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-24 13:27:51,178 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-24 13:27:51,357 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-07-24 13:27:51,361 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE PUBLIC.DATABASECHANGELOGLOCK (ID INT NOT NULL, LOCKED BOOLEAN NOT NULL, LOCKGRANTED TIMESTAMP, LOCKEDBY VARCHAR(255), CONSTRAINT PK_DATABASECHANGELOGLOCK PRIMARY KEY (ID))
+2019-07-24 13:27:51,364 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-07-24 13:27:51,365 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] DELETE FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-07-24 13:27:51,366 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOGLOCK (ID, LOCKED) VALUES (1, FALSE)
+2019-07-24 13:27:51,367 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM PUBLIC.DATABASECHANGELOGLOCK WHERE ID=1
+2019-07-24 13:27:51,371 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-24 13:27:51,791 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2019-07-24 13:27:51,792 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE PUBLIC.DATABASECHANGELOG (ID VARCHAR(255) NOT NULL, AUTHOR VARCHAR(255) NOT NULL, FILENAME VARCHAR(255) NOT NULL, DATEEXECUTED TIMESTAMP NOT NULL, ORDEREXECUTED INT NOT NULL, EXECTYPE VARCHAR(10) NOT NULL, MD5SUM VARCHAR(35), DESCRIPTION VARCHAR(255), COMMENTS VARCHAR(255), TAG VARCHAR(255), LIQUIBASE VARCHAR(20), CONTEXTS VARCHAR(255), LABELS VARCHAR(255), DEPLOYMENT_ID VARCHAR(10))
+2019-07-24 13:27:51,793 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOG
+2019-07-24 13:27:51,793 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from PUBLIC.DATABASECHANGELOG
+2019-07-24 13:27:51,793 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM PUBLIC.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-24 13:27:51,794 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK
+2019-07-24 13:27:51,810 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.books (id INT AUTO_INCREMENT NOT NULL, book_name VARCHAR(50) NOT NULL, publish_date date, is_edited BOOLEAN, is_borrowed BOOLEAN, author_id INT(4) NOT NULL, publisher_id INT(4) NOT NULL, exemplar_numbers INT(4) NOT NULL, book_image CLOB, CONSTRAINT PK_BOOKS PRIMARY KEY (id))
+2019-07-24 13:27:51,813 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table books created
+2019-07-24 13:27:51,813 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019132930-create-books-table.yml::create_books::vasile ran successfully in 3ms
+2019-07-24 13:27:51,813 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MAX(ORDEREXECUTED) FROM PUBLIC.DATABASECHANGELOG
+2019-07-24 13:27:51,815 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_books', 'vasile', 'db/changelog/03072019132930-create-books-table.yml', NOW(), 1, '8:284ed9175c4d41fccca1466b3ee1c2cb', 'createTable tableName=books', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,817 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.authors (id INT AUTO_INCREMENT NOT NULL, first_name VARCHAR(50) NOT NULL, last_name VARCHAR(50) NOT NULL, nationality VARCHAR(50), CONSTRAINT PK_AUTHORS PRIMARY KEY (id))
+2019-07-24 13:27:51,817 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table authors created
+2019-07-24 13:27:51,817 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019133140-create-authors-table.yml::create_authors::vasile ran successfully in 1ms
+2019-07-24 13:27:51,818 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_authors', 'vasile', 'db/changelog/03072019133140-create-authors-table.yml', NOW(), 2, '8:b65a2ba04be00772267a6683b19dd627', 'createTable tableName=authors', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,818 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.clients (first_name VARCHAR(50) NOT NULL, last_name VARCHAR(50) NOT NULL, birth_date date, email VARCHAR(50), phone_number VARCHAR(50), id INT AUTO_INCREMENT NOT NULL, CONSTRAINT PK_CLIENTS PRIMARY KEY (id))
+2019-07-24 13:27:51,819 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table clients created
+2019-07-24 13:27:51,819 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019133210-create-clients-table.yml::create_clients::vasile ran successfully in 1ms
+2019-07-24 13:27:51,820 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_clients', 'vasile', 'db/changelog/03072019133210-create-clients-table.yml', NOW(), 3, '8:3e2629be588069d4a15fbd7e18c97d16', 'createTable tableName=clients', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,820 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.publishers (id INT AUTO_INCREMENT NOT NULL, publisher_name VARCHAR(50) NOT NULL, address VARCHAR(50), CONSTRAINT PK_PUBLISHERS PRIMARY KEY (id))
+2019-07-24 13:27:51,821 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table publishers created
+2019-07-24 13:27:51,821 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019133320-create-publishers-table.yml::create_publishers::vasile ran successfully in 1ms
+2019-07-24 13:27:51,822 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_publishers', 'vasile', 'db/changelog/03072019133320-create-publishers-table.yml', NOW(), 4, '8:9f51f08e83907944ff0313860fd3b961', 'createTable tableName=publishers', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,822 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.borrowed_books (id INT AUTO_INCREMENT NOT NULL, borrowed_date date, returned_date date, book_id INT NOT NULL, client_id INT(4) NOT NULL, CONSTRAINT PK_BORROWED_BOOKS PRIMARY KEY (id))
+2019-07-24 13:27:51,823 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table borrowed_books created
+2019-07-24 13:27:51,823 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019133350-create-borrowed-book-table.yml::create_borrowed_books::vasile ran successfully in 1ms
+2019-07-24 13:27:51,823 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_borrowed_books', 'vasile', 'db/changelog/03072019133350-create-borrowed-book-table.yml', NOW(), 5, '8:8cf5079ef9f38a484355acc36b484069', 'createTable tableName=borrowed_books', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,824 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] ALTER TABLE PUBLIC.books ADD CONSTRAINT fk_author_id FOREIGN KEY (author_id) REFERENCES PUBLIC.authors (id) ON UPDATE CASCADE ON DELETE CASCADE
+2019-07-24 13:27:51,828 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Foreign key constraint added to books (author_id)
+2019-07-24 13:27:51,828 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019153610-add-foreign-key-authors.yml::addForeignKeyConstraintOnAuthors::vasile ran successfully in 4ms
+2019-07-24 13:27:51,829 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('addForeignKeyConstraintOnAuthors', 'vasile', 'db/changelog/03072019153610-add-foreign-key-authors.yml', NOW(), 6, '8:916ab79b7a33e49202d09043dce53baa', 'addForeignKeyConstraint baseTableName=books, constraintName=fk_author_id, referencedTableName=authors', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,829 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] ALTER TABLE PUBLIC.books ADD CONSTRAINT fk_publisher_id FOREIGN KEY (publisher_id) REFERENCES PUBLIC.publishers (id) ON UPDATE CASCADE ON DELETE CASCADE
+2019-07-24 13:27:51,830 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Foreign key constraint added to books (publisher_id)
+2019-07-24 13:27:51,830 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019153820-add-foreign-key-publishers.yml::addForeignKeyConstraintOnPublishers::vasile ran successfully in 1ms
+2019-07-24 13:27:51,831 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('addForeignKeyConstraintOnPublishers', 'vasile', 'db/changelog/03072019153820-add-foreign-key-publishers.yml', NOW(), 7, '8:814a9042bdb1b6a9ef4c9e943bb0a891', 'addForeignKeyConstraint baseTableName=books, constraintName=fk_publisher_id, referencedTableName=publishers', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,832 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] ALTER TABLE PUBLIC.borrowed_books ADD CONSTRAINT fk_book_id FOREIGN KEY (book_id) REFERENCES PUBLIC.books (id) ON UPDATE CASCADE ON DELETE CASCADE
+2019-07-24 13:27:51,832 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Foreign key constraint added to borrowed_books (book_id)
+2019-07-24 13:27:51,833 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019154010-add-foreign-key-books.yml::addForeignKeyConstraintOnBooks::vasile ran successfully in 2ms
+2019-07-24 13:27:51,833 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('addForeignKeyConstraintOnBooks', 'vasile', 'db/changelog/03072019154010-add-foreign-key-books.yml', NOW(), 8, '8:9d023cdc3bedd8387a70973c2f573c9a', 'addForeignKeyConstraint baseTableName=borrowed_books, constraintName=fk_book_id, referencedTableName=books', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,834 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] ALTER TABLE PUBLIC.borrowed_books ADD CONSTRAINT fk_client_id FOREIGN KEY (client_id) REFERENCES PUBLIC.clients (id) ON UPDATE CASCADE ON DELETE CASCADE
+2019-07-24 13:27:51,834 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Foreign key constraint added to borrowed_books (client_id)
+2019-07-24 13:27:51,835 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/03072019154111-add-foreign-key-client.yml::addForeignKeyConstraintOnClients::vasile ran successfully in 2ms
+2019-07-24 13:27:51,835 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('addForeignKeyConstraintOnClients', 'vasile', 'db/changelog/03072019154111-add-foreign-key-client.yml', NOW(), 9, '8:41643b6b27b613a1e65af6da524d0ca7', 'addForeignKeyConstraint baseTableName=borrowed_books, constraintName=fk_client_id, referencedTableName=clients', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,836 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.user (user_id INT AUTO_INCREMENT NOT NULL, email VARCHAR(50) NOT NULL, password VARCHAR NOT NULL, name VARCHAR(50) NOT NULL, last_name VARCHAR(50) NOT NULL, active BOOLEAN, CONSTRAINT PK_USER PRIMARY KEY (user_id))
+2019-07-24 13:27:51,836 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table user created
+2019-07-24 13:27:51,837 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/12072019104025-add-user-table.yml::create_user::vasile ran successfully in 1ms
+2019-07-24 13:27:51,837 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_user', 'vasile', 'db/changelog/12072019104025-add-user-table.yml', NOW(), 10, '8:b8b8342a2e89cbdedd1c256bbbde1437', 'createTable tableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,837 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.role (role_id INT AUTO_INCREMENT NOT NULL, role VARCHAR(50) NOT NULL, CONSTRAINT PK_ROLE PRIMARY KEY (role_id))
+2019-07-24 13:27:51,838 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table role created
+2019-07-24 13:27:51,838 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/12072019104530-add-roles-table.yml::create_roles::vasile ran successfully in 1ms
+2019-07-24 13:27:51,838 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_roles', 'vasile', 'db/changelog/12072019104530-add-roles-table.yml', NOW(), 11, '8:bb0bceea645d8c6d84590610810f3a1d', 'createTable tableName=role', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,839 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] CREATE TABLE public.user_role (id INT AUTO_INCREMENT NOT NULL, user_id INT NOT NULL, role_id INT NOT NULL, CONSTRAINT PK_USER_ROLE PRIMARY KEY (id))
+2019-07-24 13:27:51,840 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Table user_role created
+2019-07-24 13:27:51,840 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/12072019105101-add-user-role-table.yml::create_books::vasile ran successfully in 1ms
+2019-07-24 13:27:51,840 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('create_books', 'vasile', 'db/changelog/12072019105101-add-user-role-table.yml', NOW(), 12, '8:f33b2607462df4d64172c32479cbd07f', 'createTable tableName=user_role', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,841 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] ALTER TABLE PUBLIC.user_role ADD CONSTRAINT fk_role_id FOREIGN KEY (role_id) REFERENCES PUBLIC.role (role_id) ON UPDATE CASCADE ON DELETE CASCADE
+2019-07-24 13:27:51,842 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Foreign key constraint added to user_role (role_id)
+2019-07-24 13:27:51,842 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/12072019105335-add-foreign-key-roles.yml::addForeignKeyConstraintOnRoles::vasile ran successfully in 1ms
+2019-07-24 13:27:51,843 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('addForeignKeyConstraintOnRoles', 'vasile', 'db/changelog/12072019105335-add-foreign-key-roles.yml', NOW(), 13, '8:5460159a0cbf7ddd5ea72d4fb92f35db', 'addForeignKeyConstraint baseTableName=user_role, constraintName=fk_role_id, referencedTableName=role', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,843 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] ALTER TABLE PUBLIC.user_role ADD CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES PUBLIC.user (user_id) ON UPDATE CASCADE ON DELETE CASCADE
+2019-07-24 13:27:51,844 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] Foreign key constraint added to user_role (user_id)
+2019-07-24 13:27:51,844 INFO [main] l.c.ChangeSet [Slf4jLogger.java:42] ChangeSet db/changelog/12072019110257-add-foreign-key-user.yml::addForeignKeyConstraintOnUser::vasile ran successfully in 1ms
+2019-07-24 13:27:51,845 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] INSERT INTO PUBLIC.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, DESCRIPTION, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('addForeignKeyConstraintOnUser', 'vasile', 'db/changelog/12072019110257-add-foreign-key-user.yml', NOW(), 14, '8:005692117f7cd681a77c8b19014ba422', 'addForeignKeyConstraint baseTableName=user_role, constraintName=fk_user_id, referencedTableName=user', '', 'EXECUTED', NULL, NULL, '3.6.3', '3964071794')
+2019-07-24 13:27:51,846 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-24 13:27:51,846 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-24 13:27:51,847 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-24 13:27:51,877 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-24 13:27:51,878 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-24 13:27:51,895 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-24 13:27:51,918 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-24 13:27:51,919 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-24 13:27:51,968 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-24 13:27:52,020 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-24 13:27:52,324 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-24 13:27:52,633 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-24 13:27:52,633 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-24 13:27:52,633 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-24 13:27:52,633 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-24 13:27:52,633 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-24 13:27:52,633 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-24 13:27:52,646 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/api/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@576b385d, org.springframework.security.web.context.SecurityContextPersistenceFilter@62e99458, org.springframework.security.web.header.HeaderWriterFilter@10830d50, org.springframework.security.web.authentication.logout.LogoutFilter@5eef8a16, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@641bc9a8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22f057b4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@796642ae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2560a7be, org.springframework.security.web.session.SessionManagementFilter@612bb755, org.springframework.security.web.access.ExceptionTranslationFilter@64e89bb2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6e7fa4b0]
+2019-07-24 13:27:52,718 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 13:27:52,735 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-24 13:27:52,819 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-24 13:27:52,827 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-24 13:27:52,828 INFO [main] c.b.a.ApiApp [StartupInfoLogger.java:59] Started ApiApp in 2.776 seconds (JVM running for 2.989)
+2019-07-24 13:27:56,619 INFO [Thread-8] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-24 13:27:56,619 INFO [Thread-8] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-24 13:27:56,620 INFO [Thread-8] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-24 13:27:56,621 INFO [Thread-8] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-24 13:28:00,423 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher on ubuntu-pc5 with PID 10742 (/home/ubuntu/Downloads/library/frontend/target/classes started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-24 13:28:00,425 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-24 13:28:00,783 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-24 13:28:00,822 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 36ms. Found 7 repository interfaces.
+2019-07-24 13:28:00,994 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$532bf8fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-24 13:28:01,118 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-24 13:28:01,124 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-24 13:28:01,129 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-24 13:28:01,129 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-24 13:28:01,166 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-24 13:28:01,166 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 700 ms
+2019-07-24 13:28:01,230 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-24 13:28:01,374 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-24 13:28:01,558 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-24 13:28:01,559 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-24 13:28:01,560 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-24 13:28:01,567 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-24 13:28:01,980 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-24 13:28:01,981 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-24 13:28:01,981 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-24 13:28:01,982 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-24 13:28:01,997 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-24 13:28:01,997 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-24 13:28:01,999 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-24 13:28:02,024 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-24 13:28:02,032 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-24 13:28:02,052 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-24 13:28:02,076 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-24 13:28:02,076 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-24 13:28:02,129 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-24 13:28:02,184 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-24 13:28:02,261 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@349f3ff7
+2019-07-24 13:28:02,577 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-24 13:28:02,971 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-24 13:28:02,971 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-24 13:28:02,971 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-24 13:28:02,971 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-24 13:28:02,971 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-24 13:28:02,971 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-24 13:28:02,971 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-24 13:28:02,972 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-24 13:28:02,972 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-24 13:28:02,972 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-24 13:28:02,972 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-24 13:28:02,972 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-24 13:28:02,984 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/api/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11577ab8, org.springframework.security.web.context.SecurityContextPersistenceFilter@673605ef, org.springframework.security.web.header.HeaderWriterFilter@50e0b472, org.springframework.security.web.authentication.logout.LogoutFilter@5af641d3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@59043741, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c1a6db1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3539cf45, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5513a46b, org.springframework.security.web.session.SessionManagementFilter@6054ac20, org.springframework.security.web.access.ExceptionTranslationFilter@31028e45, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4f55a864]
+2019-07-24 13:28:02,988 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@af94b0b, org.springframework.security.web.context.SecurityContextPersistenceFilter@5862dda4, org.springframework.security.web.header.HeaderWriterFilter@70cac22a, org.springframework.security.web.authentication.logout.LogoutFilter@5e02fb23, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@787a4519, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@299ddfff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@fe09374, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@208185c0, org.springframework.security.web.session.SessionManagementFilter@57a0c261, org.springframework.security.web.access.ExceptionTranslationFilter@51b41740, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e7113f8]
+2019-07-24 13:28:03,058 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 13:28:03,076 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-24 13:28:03,118 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-24 13:28:03,130 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-24 13:28:03,192 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-24 13:28:03,201 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-24 13:28:03,202 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 3.033 seconds (JVM running for 3.254)
+2019-07-24 13:28:06,315 INFO [Thread-12] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-24 13:28:06,316 INFO [Thread-12] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-24 13:28:06,317 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-24 13:28:06,319 INFO [Thread-12] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2019-07-24 13:29:08,571 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:50] Starting Launcher v0.0.1-SNAPSHOT on ubuntu-pc5 with PID 10991 (/home/ubuntu/Downloads/library/frontend/target/frontend-0.0.1-SNAPSHOT.jar started by ubuntu in /home/ubuntu/Downloads/library)
+2019-07-24 13:29:08,573 INFO [main] c.b.f.Launcher [SpringApplication.java:650] The following profiles are active: prod
+2019-07-24 13:29:09,054 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-24 13:29:09,112 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 53ms. Found 7 repository interfaces.
+2019-07-24 13:29:09,349 INFO [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3f3dd49b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-24 13:29:09,534 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2019-07-24 13:29:09,545 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2019-07-24 13:29:09,553 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2019-07-24 13:29:09,553 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-24 13:29:09,671 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2019-07-24 13:29:09,671 INFO [main] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:283] Root WebApplicationContext: initialization completed in 1073 ms
+2019-07-24 13:29:09,756 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2019-07-24 13:29:09,971 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2019-07-24 13:29:10,236 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-24 13:29:10,237 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangeloglock
+2019-07-24 13:29:10,238 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+2019-07-24 13:29:10,248 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully acquired change log lock
+2019-07-24 13:29:10,630 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT MD5SUM FROM public.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-07-24 13:29:10,631 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT COUNT(*) FROM public.databasechangelog
+2019-07-24 13:29:10,631 INFO [main] l.c.StandardChangeLogHistoryService [Slf4jLogger.java:42] Reading from public.databasechangelog
+2019-07-24 13:29:10,631 INFO [main] l.e.j.JdbcExecutor [Slf4jLogger.java:42] SELECT * FROM public.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-07-24 13:29:10,650 INFO [main] l.l.StandardLockService [Slf4jLogger.java:42] Successfully released change log lock
+2019-07-24 13:29:10,651 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2019-07-24 13:29:10,654 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2019-07-24 13:29:10,689 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2019-07-24 13:29:10,697 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2019-07-24 13:29:10,733 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-24 13:29:10,781 INFO [main] o.h.Version [Version.java:46] HHH000412: Hibernate Core {5.3.10.Final}
+2019-07-24 13:29:10,782 INFO [main] o.h.c.Environment [Environment.java:213] HHH000206: hibernate.properties not found
+2019-07-24 13:29:10,892 INFO [main] o.h.a.c.Version [JavaReflectionManager.java:49] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-24 13:29:11,016 INFO [main] o.h.d.Dialect [Dialect.java:157] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-07-24 13:29:11,105 INFO [main] o.h.t.BasicTypeRegistry [BasicTypeRegistry.java:159] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@d4ab71a
+2019-07-24 13:29:11,632 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:415] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-24 13:29:12,035 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-24 13:29:12,035 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-24 13:29:12,035 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-24 13:29:12,035 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-24 13:29:12,035 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-24 13:29:12,036 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-24 13:29:12,036 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/resources/**'], []
+2019-07-24 13:29:12,036 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/static/**'], []
+2019-07-24 13:29:12,036 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/css/**'], []
+2019-07-24 13:29:12,036 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/js/**'], []
+2019-07-24 13:29:12,036 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/images/**'], []
+2019-07-24 13:29:12,036 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/console/**'], []
+2019-07-24 13:29:12,054 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: Ant [pattern='/api/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7772054c, org.springframework.security.web.context.SecurityContextPersistenceFilter@2ff95fc6, org.springframework.security.web.header.HeaderWriterFilter@4d48bd85, org.springframework.security.web.authentication.logout.LogoutFilter@7965a51c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@59532566, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@58a4a74d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35088e87, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f61f937, org.springframework.security.web.session.SessionManagementFilter@58a120b0, org.springframework.security.web.access.ExceptionTranslationFilter@597f48df, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58d63b16]
+2019-07-24 13:29:12,060 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:43] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@12958360, org.springframework.security.web.context.SecurityContextPersistenceFilter@37b72ea, org.springframework.security.web.header.HeaderWriterFilter@25b5c5e3, org.springframework.security.web.authentication.logout.LogoutFilter@69d6a7cd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6f7e336b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@cc239ba, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7d37f1c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c6e0f32, org.springframework.security.web.session.SessionManagementFilter@5177e388, org.springframework.security.web.access.ExceptionTranslationFilter@68dcfd52, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@47547132]
+2019-07-24 13:29:12,160 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-24 13:29:12,198 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration [JpaBaseConfiguration.java:225] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-24 13:29:12,260 WARN [main] o.t.t.TemplateMode [TemplateMode.java:150] [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-07-24 13:29:12,282 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:58] Adding welcome page template: index
+2019-07-24 13:29:12,362 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2019-07-24 13:29:12,374 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:202] Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-24 13:29:12,375 INFO [main] c.b.f.Launcher [StartupInfoLogger.java:59] Started Launcher in 4.116 seconds (JVM running for 4.369)
+2019-07-24 13:29:29,401 INFO [Thread-7] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-24 13:29:29,404 INFO [Thread-7] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:597] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-24 13:29:29,406 INFO [Thread-7] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2019-07-24 13:29:29,408 INFO [Thread-7] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.

@@ -64,5 +64,47 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>docker</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.google.cloud.tools</groupId>
+                        <artifactId>jib-maven-plugin</artifactId>
+                        <version>1.4.0</version>
+                        <configuration>
+                            <from>
+                                <image>openjdk:8-jdk-alpine</image>
+                            </from>
+                            <to>
+                                <image>vasiafurdui/library-app</image>
+                                <tags>
+                                    <tag>0.2</tag>
+                                </tags>
+                            </to>
+                            <container>
+                                <useCurrentTimestamp>true</useCurrentTimestamp>
+                                <jvmFlags>
+                                    <jvmFlag>-XX:+UseStringDeduplication</jvmFlag>
+                                    <jvmFlag>-XX:+UseG1GC</jvmFlag>
+                                    <jvmFlag>-Djava.security.egd=file:/dev/./urandom</jvmFlag>
+                                </jvmFlags>
+                                <environment>
+                                    <SPRING_PROFILES_ACTIVE>docker</SPRING_PROFILES_ACTIVE>
+                                </environment>
+                                <args>
+                                    <arg>spring.profiles.active=prod</arg>
+                                </args>
+                                <ports>
+                                    <port>8080</port>
+                                </ports>
+                            </container>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
